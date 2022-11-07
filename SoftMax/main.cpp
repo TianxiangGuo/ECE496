@@ -2,18 +2,14 @@
 #include <iostream>
 #include <fstream>
 #include "top.hpp"
+#include "common.hpp"
 #include <bitset>
 using namespace std;
 
 
-void t(hls::stream<dataword> &in,hls::stream<ap_int<32*128> > &out)
-{
-
-}
-
 int main() {
 	hls::stream<dataword> in;
-	hls::stream<ap_uint<128> > out;
+	hls::stream<dataword> out;
 
 	ap_int<32> in_data[64][64] = {{ 4142, 38, -4, -352, -7, 197, -14, -458, 18, 90, -174, 592, -660, -410, -293, -541, -461, -618, -408, -378, -404, -290, -75, -169, -399, -630, -369, 69, -75, -547, -302, -689, 298, -604, -530, -784, -551, -460, -382, -202, 63, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648}, \
 			{ 5120, 3725, 3479, 2446, 2465, 2068, 2214, 2068, 1828, 1768, 1223, 1523, -84, 248, 261, 550, 1249, 1828, 2043, 1833, 1515, 1191, 840, 724, 1365, 1085, 1558, 1390, 1195, 445, -88, -1523, -289, -1512, -1237, -1019, -261, -349, -283, -449, -867, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648}, \
@@ -84,44 +80,44 @@ int main() {
 
 	dataword pkt;
 
-	// first packet = the number of ints to compute. Here, 64 numbers?
-	pkt.data.range(63,32) = 64;
+	pkt.data.range(31,0) = 4; // Nr
+	pkt.data.range(63,32) = 16; // Nc
+	pkt.data.range(95,64) = 1; // Nu
 	in.write(pkt);
 
 
-	// Above, we have 64 sets of data in in_data. This runs the test on the set with index 1.
-	// Add all the data from in_data[1] into the packet's data, 16 integers at a time. This is because
-	// the packet length is 512 bits, which can fit 16 32-bit ints.
-	for (int j=0; j<64/16; j++) {
+	for (int j=0; j<4; j++) {
 		for (int k=0; k<16; k++) {
 			pkt.data.range(32*(k+1)-1, 32*k)  = in_data[1][k + j*16];
+//			pkt.data.range(32*(k+1)-1, 32*k) = 255;
 		}
 		in.write(pkt);
 	}
 
 	softmax(in, out);
 
-    /* Output:
-    274877906944
-    178 24 17 4 4 2 2 2 1 1 0 1 0 0 0 0
-    0 1 2 1 1 0 0 0 0 0 1 0 0 0 0 0
-    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-    */
-    // TODO: what does the first entry in out mean?
-	// It's reading back "N" input. Above, we have pkt.data.range(63, 32) = 64. Here, it reads the entire
-	// pk.data back, which is why the number is so large.
-	cout <<  out.read() << endl;
 
-    // The other 64 integers printed represents the integer softmax, before normalizing. The number at index 0 is the largest.
-	for (int j=0; j<64/16; j++) {
-		ap_uint<128> temp = out.read();
+	pkt = out.read();
+	cout <<  pkt.data.range(31,0) << endl;
+	cout <<  pkt.data.range(63,32) << endl;
+	cout <<  pkt.data.range(95,64) << endl;
 
-		for (int k=0; k<16; k++) {
-			cout << temp.range(8*(k+1)-1, 8*k) << " ";
+
+	while (!out.empty()) {
+		dataword temp = out.read();
+
+		cout << "id " <<temp.id << " dest " << temp.dest << " user " << temp.user << " last " << temp.last << endl;
+		for (int k=0; k<64; k++) {
+			cout << temp.data.range(8*(k+1)-1, 8*k) << " ";
 		}
 		cout  << endl;
 	}
+
+	if (!in.empty())
+	{
+		cout << "in not empty! " << endl;
+	}
+
 	return 0;
 }
 

@@ -1,0 +1,15 @@
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -S C:\Users\Andy\OneDrive\2022F\ECE496\Github\ECE496\Softmax_Calculations -B C:\Users\Andy\OneDrive\2022F\ECE496\Github\ECE496\Softmax_Calculations\cmake-build-release-mingw
+CMake Error at CMakeLists.txt:2 (project):
+  Running
+
+   'nmake' '-?'
+
+  failed with:
+
+   The system cannot find the file specified
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/Andy/OneDrive/2022F/ECE496/Github/ECE496/Softmax_Calculations/cmake-build-release-mingw/CMakeFiles/CMakeOutput.log".
