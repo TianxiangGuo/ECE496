@@ -80,16 +80,16 @@ int main() {
 
 	dataword pkt;
 
-	pkt.data.range(31,0) = 4; // Nr
+	pkt.data.range(31,0) = 2; // Nr
 	pkt.data.range(63,32) = 16; // Nc
 	pkt.data.range(95,64) = 1; // Nu
 	in.write(pkt);
 
 
-	for (int j=0; j<4; j++) {
+	for (int j=0; j<2; j++) {
 		for (int k=0; k<16; k++) {
-			pkt.data.range(32*(k+1)-1, 32*k)  = in_data[1][k + j*16];
-//			pkt.data.range(32*(k+1)-1, 32*k) = 255;
+//			pkt.data.range(32*(k+1)-1, 32*k)  = in_data[1][k + j*16];
+			pkt.data.range(32*(k+1)-1, 32*k) = 255;
 		}
 		in.write(pkt);
 	}
