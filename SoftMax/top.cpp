@@ -8,12 +8,12 @@ using namespace std;
 
 
 // Defines constants used in softmax calculations
-ap_int<config_t::IN_DATA_WIDTH> self_const = 30;
-ap_int<config_t::IN_DATA_WIDTH> x0 = -490;
-ap_int<config_t::IN_DATA_WIDTH> b = 1913;
-ap_int<config_t::IN_DATA_WIDTH> c = 1394358;
-ap_int<config_t::IN_DATA_WIDTH> m = 1614886140;
-ap_int<config_t::QUANT_DATA_WIDTH> e = 66;
+const ap_int<config_t::IN_DATA_WIDTH> self_const = 30;
+const ap_int<config_t::IN_DATA_WIDTH> x0 = -490;
+const ap_int<config_t::IN_DATA_WIDTH> b = 1913;
+const ap_int<config_t::IN_DATA_WIDTH> c = 1394358;
+const ap_int<config_t::IN_DATA_WIDTH> m = 1614886140;
+const ap_int<config_t::QUANT_DATA_WIDTH> e = 66;
 
 void save_data (
 		hls::stream<dataword>& in,	// input packets
@@ -38,7 +38,6 @@ void save_data (
 
 {
 	const ap_int<config_t::IN_DATA_WIDTH> neg_inf = 1 << (config_t::IN_DATA_WIDTH - 1);
-	cout<<"Neg inf: "<<neg_inf<<endl;
 
 	// Read in metadata
 	dataword pkt = in.read();
@@ -52,6 +51,7 @@ void save_data (
 	out_num_batches.write(num_batches);
 	out_num_unrolled_iter.write(unrolled_iterations);
 
+	ap_int<config_t::IN_DATA_WIDTH> max_0[config_t::IN_VEC_WIDTH];
 	ap_int<config_t::IN_DATA_WIDTH> max_1[config_t::IN_VEC_WIDTH / 2];
 	ap_int<config_t::IN_DATA_WIDTH> max_2[config_t::IN_VEC_WIDTH / 4];
 	ap_int<config_t::IN_DATA_WIDTH> max_3[config_t::IN_VEC_WIDTH / 8];
@@ -59,6 +59,7 @@ void save_data (
 	ap_int<config_t::IN_DATA_WIDTH> buffer[config_t::MAX_BATCH_SIZE];
 	ap_int<config_t::IN_DATA_WIDTH> max_val;
 	#pragma HLS ARRAY_PARTITION variable=buffer complete dim=0
+	#pragma HLS ARRAY_PARTITION variable=max_0 complete dim=0
 	#pragma HLS ARRAY_PARTITION variable=max_1 complete dim=0
 	#pragma HLS ARRAY_PARTITION variable=max_2 complete dim=0
 	#pragma HLS ARRAY_PARTITION variable=max_3 complete dim=0
@@ -134,12 +135,46 @@ void save_data (
 			}
 		}
 
-		// A serial region where we find the largest number in the batch
-		max_val = neg_inf;
-		for (int p = 0; p < config_t::MAX_BATCH_SIZE / config_t::IN_VEC_WIDTH; p++) {
-			if (max_val_packets[p] > max_val) {
-				cout<<"Replacing, "<<max_val_packets[p]<<endl;
-				max_val = max_val_packets[p];
+		// find the largest number in the entire batch
+		if (config_t::MAX_BATCH_SIZE / config_t::IN_VEC_WIDTH == 32) {
+			for (int k=0; k < 16; k++) {
+				#pragma HLS unroll
+				if (max_val_packets[2*k] < max_val_packets[2*k+1]) {
+					max_0[k] = max_val_packets[2*k + 1];
+				} else {
+					max_0[k] = max_val_packets[2*k];
+				}
+			}
+
+			for (int k=0; k < 8; k++) {
+				#pragma HLS unroll
+				if (max_0[2*k] < max_0[2*k+1]) {
+					max_1[k] = max_0[2*k + 1];
+				} else {
+					max_1[k] = max_0[2*k];
+				}
+			}
+			for (int k=0; k < 4; k++) {
+				#pragma HLS unroll
+				if (max_1[2*k] < max_1[2*k+1]) {
+					max_2[k] = max_1[2*k + 1];
+				} else {
+					max_2[k] = max_1[2*k];
+				}
+			}
+			for (int k=0; k < 2; k++) {
+				#pragma HLS unroll
+				if (max_2[2*k] < max_2[2*k+1]) {
+					max_3[k] = max_2[2*k + 1];
+				} else {
+					max_3[k] = max_2[2*k];
+				}
+			}
+
+			if (max_3[0] < max_3[1]) {
+				max_val = max_3[1];
+			} else {
+				max_val = max_3[0];
 			}
 		}
 
@@ -147,10 +182,12 @@ void save_data (
 
 		// write to out, split by unroll factor
 		for (int iter = 0; iter < unrolled_iterations; iter++) {
+#pragma HLS loop_tripcount min=config_t::MIN_BATCH_SIZE/config_t::UNROLL_FACTOR max=config_t::MAX_BATCH_SIZE/config_t::UNROLL_FACTOR
 			for (int num = 0; num < config_t::UNROLL_FACTOR; num++) {
 #pragma HLS unroll
 				ap_int<config_t::IN_DATA_WIDTH> read = buffer[num + iter * config_t::UNROLL_FACTOR];
-				if (read == neg_inf) {
+
+				if (read == neg_inf && max_val != neg_inf) {
 					out[num].write(read);
 				} else {
 					out[num].write(read - max_val);
@@ -242,17 +279,7 @@ void compute_softmax_from_exponents (
 		// store the partial sum in sum array
 		for (int iter = 0; iter < unrolled_iterations; iter++) {
 			#pragma HLS loop_tripcount min=config_t::MIN_BATCH_SIZE/config_t::UNROLL_FACTOR max=config_t::MAX_SEQUENCE_LEN/config_t:UNROLL_FACTOR
-			#pragma HLS pipeline ii = 1
-/*
-			// reset the sum
-			if (iter == 0) {
-				sum_val = 0;
-				for (int unroll = 0; unroll < config_t::UNROLL_FACTOR; unroll++) {
-					#pragma HLS unroll
-					sum[unroll] = 0;
-				}
-			}
-*/
+			#pragma HLS pipeline ii=1
 
 			for (int unroll = 0; unroll < config_t::UNROLL_FACTOR; unroll++) {
 				#pragma HLS unroll
@@ -260,7 +287,6 @@ void compute_softmax_from_exponents (
 				// Quantize here too (shift left), so the divide
 				// doesn't make the numbers too small
 				buffer[unroll + iter * config_t::UNROLL_FACTOR] = ap_int<config_t::IN_DATA_WIDTH>(read) << config_t::OUT_DATA_WIDTH;
-
 				if (iter == 0) {
 					sum[unroll] = read;
 				} else {
@@ -278,15 +304,43 @@ void compute_softmax_from_exponents (
 			}
 		}
 
+
+		#define DECIMALS 15
+		ap_int<32> D_p = sum_val;
+		ap_int<32> shift = 0;
+		while (D_p.range(31, DECIMALS) != 0) {
+			shift += 1;
+			D_p = D_p >> 1;
+		}
+
+		ap_int<32> x_init = (48 << DECIMALS) / 17 - (32 * D_p)/17;
+
 		for (int iter = 0; iter < unrolled_iterations; iter++) {
 			#pragma HLS loop_tripcount min=config_t::MIN_BATCH_SIZE/config_t::UNROLL_FACTOR max=config_t::MAX_SEQUENCE_LEN/config_t:UNROLL_FACTOR
-			#pragma HLS pipeline ii = 1
+			#pragma HLS pipeline ii=1
 
 			for (int unroll = 0; unroll < config_t::UNROLL_FACTOR; unroll++) {
+				ap_int<config_t::IN_DATA_WIDTH> div;
 				#pragma HLS unroll
+				#pragma HLS RESOURCE variable=div core=DivnS
 				ap_int<config_t::IN_DATA_WIDTH> read = buffer[unroll + iter * config_t::UNROLL_FACTOR];
-				ap_int<config_t::IN_DATA_WIDTH> div = read + sum_val; // TODO: revert back to divide
-				out[unroll].write(div);
+				ap_int<32> N_p = read >> shift;
+				ap_int<32> x = x_init;
+
+				for (int i = 0; i < 3; i++) {
+					ap_int<32> b_p_x = (1 << DECIMALS) - ((D_p * x) >> DECIMALS);
+					x = x + ((x * b_p_x) >> DECIMALS);
+				}
+
+				//div = read / sum_val; // TODO: revert back to divide
+				ap_int<64> result = (N_p * x) >> DECIMALS;
+				if (result[DECIMALS-1] == 1) {
+					result = (result >> DECIMALS) + 1;
+				} else {
+					result = result >> DECIMALS;
+				}
+
+				out[unroll].write(result);
 			}
 		}
 	}
@@ -336,6 +390,7 @@ void write (
 		#pragma HLS loop_tripcount min=1 max=512
 		for (int pkt = 0; pkt < num_output_packets; pkt++) {
 
+#pragma HLS loop_tripcount min=1 max=8
 			// This loop enables unrolling. For example, if the upper bound is 16 and unroll factor
 			// if 4, it means that 4 things can execute simultaneously, at a time, for 64 things total
 			for (int j = 0; j < config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR; j++) {
@@ -392,6 +447,7 @@ void softmax(
 	static hls::stream<ap_uint<32> > compute_softmax_from_exponents_num_unrolled_iter;
 	hls::stream<ap_int<config_t::OUT_DATA_WIDTH> > compute_softmax_from_exponents_out[config_t::UNROLL_FACTOR];
 
+
 	save_data (in, save_data_meta, save_data_num_batches, save_data_num_unrolled_iter, save_data_out);
 	quantized_exponential (
 			save_data_num_batches, save_data_num_unrolled_iter, save_data_out, quantized_exponential_num_batches,
@@ -400,4 +456,5 @@ void softmax(
 			quantized_exponential_num_batches, quantized_exponential_unrolled_iterations, quantized_exponential_out,
 			compute_softmax_from_exponents_num_unrolled_iter, compute_softmax_from_exponents_out);
 	write (save_data_meta, compute_softmax_from_exponents_num_unrolled_iter, compute_softmax_from_exponents_out, out);
+
 }
