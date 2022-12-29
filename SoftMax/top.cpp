@@ -182,9 +182,10 @@ void save_data (
 
 		// write to out, split by unroll factor
 		for (int iter = 0; iter < unrolled_iterations; iter++) {
-#pragma HLS loop_tripcount min=config_t::MIN_BATCH_SIZE/config_t::UNROLL_FACTOR max=config_t::MAX_BATCH_SIZE/config_t::UNROLL_FACTOR
+			#pragma HLS loop_tripcount min=config_t::MIN_BATCH_SIZE/config_t::UNROLL_FACTOR max=config_t::MAX_BATCH_SIZE/config_t::UNROLL_FACTOR
+
 			for (int num = 0; num < config_t::UNROLL_FACTOR; num++) {
-#pragma HLS unroll
+				#pragma HLS unroll
 				ap_int<config_t::IN_DATA_WIDTH> read = buffer[num + iter * config_t::UNROLL_FACTOR];
 
 				if (read == neg_inf && max_val != neg_inf) {
@@ -320,9 +321,7 @@ void compute_softmax_from_exponents (
 			#pragma HLS pipeline ii=1
 
 			for (int unroll = 0; unroll < config_t::UNROLL_FACTOR; unroll++) {
-				ap_int<config_t::IN_DATA_WIDTH> div;
 				#pragma HLS unroll
-				#pragma HLS RESOURCE variable=div core=DivnS
 				ap_int<config_t::IN_DATA_WIDTH> read = buffer[unroll + iter * config_t::UNROLL_FACTOR];
 				ap_int<32> N_p = read >> shift;
 				ap_int<32> x = x_init;
@@ -332,14 +331,14 @@ void compute_softmax_from_exponents (
 					x = x + ((x * b_p_x) >> DECIMALS);
 				}
 
-				//div = read / sum_val; // TODO: revert back to divide
+				//ap_int<config_t::IN_DATA_WIDTH> div = read / sum_val; // TODO: revert back to divide
 				ap_int<64> result = (N_p * x) >> DECIMALS;
 				if (result[DECIMALS-1] == 1) {
 					result = (result >> DECIMALS) + 1;
 				} else {
 					result = result >> DECIMALS;
 				}
-
+				cout<<result<<" "<<unroll<<endl;
 				out[unroll].write(result);
 			}
 		}
@@ -398,7 +397,8 @@ void write (
 
 				for (int unroll_idx = 0; unroll_idx < config_t::UNROLL_FACTOR; unroll_idx++) {
 					#pragma HLS unroll
-					if (pkt == num_output_packets - 1 && j >= unrolled_iterations % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR)) {
+					if (unrolled_iterations % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR) != 0 &&
+						pkt == num_output_packets - 1 && j >= unrolled_iterations % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR)) {
 						// This is outside of the scope of original calculations, so fill in 0
 						buffer[j].range(config_t::OUT_DATA_WIDTH*(unroll_idx+1)-1, config_t::OUT_DATA_WIDTH*unroll_idx) = 0;
 					} else {
@@ -425,6 +425,81 @@ void write (
 	}
 }
 
+void write_out(
+		hls::stream<ap_uint<96> >& in_n,
+		hls::stream<ap_uint<32> >& in_iter_c,
+		hls::stream<ap_int<config_t::OUT_DATA_WIDTH * config_t::UNROLL_FACTOR> > &in,
+		hls::stream<dataword>& out)
+{
+	// read N
+	ap_uint<96> N = in_n.read();
+	unsigned int ITER = in_iter_c.read();
+	unsigned int N_r = N.range(31,0);
+	unsigned int N_c = N.range(63,32);
+	unsigned int unquant_N = N.range(95, 64);
+	// new N_c
+	unsigned int NN_c;
+
+	// set a new N_c for softmax_matmul
+	if (N_c < config_t::OUT_VEC_WIDTH)
+	{
+		NN_c = config_t::OUT_VEC_WIDTH;
+	}
+	else if (N_c % config_t::OUT_VEC_WIDTH == 0)
+	{
+		NN_c = N_c;
+	}
+	else
+	{
+		NN_c = config_t::OUT_VEC_WIDTH * (N_c / config_t::OUT_VEC_WIDTH + 1);
+	}
+
+	dataword out_data;
+
+	out_data.data.range(31,0) = N_r;
+	out_data.data.range(63,32) = NN_c;
+	out_data.data.range(95,64) = unquant_N;
+	out_data.dest = 255;
+	out_data.id = 0;
+	out_data.last = 0;
+	out_data.user = NN_c / config_t::OUT_VEC_WIDTH + 1;
+	out.write(out_data);
+
+	ap_uint<config_t::OUT_DATA_WIDTH * config_t::UNROLL_FACTOR> temp[config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR];
+
+#pragma HLS ARRAY_PARTITION variable=temp dim=0 complete
+
+	for (ap_uint<16> iter=0; iter < ap_uint<16>(N_r); iter++) {
+		#pragma HLS loop_tripcount min=1 max=512
+
+		for (ap_uint<16> i=0; i < ap_uint<16>(N_c) / config_t::UNROLL_FACTOR; i++) {
+			#pragma HLS pipeline ii=1
+
+			if (i % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR) == 0) {
+				for (ap_uint<16> k=0; k<config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR ; k++) {
+					#pragma HLS unroll
+					temp[k] = 0;
+				}
+			}
+
+			temp[i % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR)] = in.read();
+
+			if ((i > 0 && i % (config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR) == config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR - 1) || (i == N_c / config_t::UNROLL_FACTOR - 1))
+			{
+				for (ap_uint<16> k=0; k<config_t::OUT_VEC_WIDTH / config_t::UNROLL_FACTOR ; k++) {
+					#pragma HLS unroll
+					out_data.data.range(config_t::OUT_DATA_WIDTH * config_t::UNROLL_FACTOR * (k+1)-1, config_t::OUT_DATA_WIDTH * config_t::UNROLL_FACTOR * k) = temp[k];
+				}
+
+				out_data.dest = 255;
+				out_data.id = 0;
+				out_data.last = i == N_c / config_t::UNROLL_FACTOR - 1 ? 1 : 0;
+				out_data.user = NN_c / config_t::OUT_VEC_WIDTH + 1;
+				out.write(out_data);
+			}
+		}
+	}
+}
 
 void softmax(
 		hls::stream<dataword>& in,

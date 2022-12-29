@@ -1,0 +1,839 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Andy' on host 'desktop-ck9c8bm' (Windows NT_amd64 version 6.2) on Wed Dec 28 19:19:56 -0500 2022
+INFO: [HLS 200-10] In directory 'C:/Users/Andy/Desktop/ECE496_flatten'
+INFO: [HLS 200-10] Opening project 'C:/Users/Andy/Desktop/ECE496_flatten/softmax'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/Andy/Desktop/ECE496_flatten/softmax/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.625ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../top_incremental.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_fpo.h:186,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../../common.hpp:4,
+                 from ../../../../top_incremental.cpp:3:
+C:/Xilinx/Vivado/2018.3/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vivado/2018.3/include/hls_fpo.h:186:0,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_int.h:54,
+                 from ../../../../common.hpp:4,
+                 from ../../../../top_incremental.cpp:3:
+C:/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vivado/2018.3/include/ap_utils.h:76:0,
+                 from ../../../../common.hpp:5,
+                 from ../../../../top_incremental.cpp:3:
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:164:31: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_IfRead(...) SSDM_OP_ATTR;
+                               ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:165:32: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_IfWrite(...) SSDM_OP_ATTR;
+                                ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:166:36: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfNbRead(...) SSDM_OP_ATTR;
+                                    ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:166:36: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfNbRead(...) SSDM_OP_ATTR;
+                                    ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:167:37: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfNbWrite(...) SSDM_OP_ATTR;
+                                     ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:167:37: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfNbWrite(...) SSDM_OP_ATTR;
+                                     ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:168:37: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfCanRead(...) SSDM_OP_ATTR;
+                                     ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:168:37: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfCanRead(...) SSDM_OP_ATTR;
+                                     ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:169:38: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfCanWrite(...) SSDM_OP_ATTR;
+                                      ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:169:38: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_ _ssdm_op_IfCanWrite(...) SSDM_OP_ATTR;
+                                      ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:172:32: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_StreamRead(...) SSDM_OP_ATTR;
+                                ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:173:33: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_StreamWrite(...) SSDM_OP_ATTR;
+                                 ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:174:38: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamNbRead(...) SSDM_OP_ATTR;
+                                      ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:174:38: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamNbRead(...) SSDM_OP_ATTR;
+                                      ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:175:39: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamNbWrite(...) SSDM_OP_ATTR;
+                                       ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:175:39: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamNbWrite(...) SSDM_OP_ATTR;
+                                       ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:176:39: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamCanRead(...) SSDM_OP_ATTR;
+                                       ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:176:39: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamCanRead(...) SSDM_OP_ATTR;
+                                       ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:177:40: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamCanWrite(...) SSDM_OP_ATTR;
+                                        ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'bitwidth' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:177:40: note: in expansion of macro 'SSDM_OP_ATTR'
+     _uint1_  _ssdm_StreamCanWrite(...) SSDM_OP_ATTR;
+                                        ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:178:36: note: in expansion of macro 'SSDM_OP_ATTR'
+     unsigned _ssdm_StreamSize(...) SSDM_OP_ATTR;
+                                    ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:183:37: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_MemShiftRead(...) SSDM_OP_ATTR;
+                                     ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:185:29: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_Wait(...) SSDM_OP_ATTR;
+                             ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:186:29: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_Poll(...) SSDM_OP_ATTR;
+                             ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:153:76: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_OP_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                            ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:188:31: note: in expansion of macro 'SSDM_OP_ATTR'
+     void _ssdm_op_Return(...) SSDM_OP_ATTR;
+                               ^~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:191:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecSynModule(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:192:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecTopModule(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:193:40: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecProcessDecl(...) SSDM_SPEC_ATTR;
+                                        ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:194:39: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecProcessDef(...) SSDM_SPEC_ATTR;
+                                       ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:195:33: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecPort(...) SSDM_SPEC_ATTR;
+                                 ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:196:39: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecConnection(...) SSDM_SPEC_ATTR;
+                                       ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:197:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecChannel(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:198:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecSensitive(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:199:39: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecModuleInst(...) SSDM_SPEC_ATTR;
+                                       ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:200:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecPortMap(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:202:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecReset(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:204:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecPlatform(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:205:40: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecClockDomain(...) SSDM_SPEC_ATTR;
+                                        ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:206:40: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecPowerDomain(...) SSDM_SPEC_ATTR;
+                                        ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:208:39: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     int _ssdm_op_SpecRegionBegin(...) SSDM_SPEC_ATTR;
+                                       ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:209:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     int _ssdm_op_SpecRegionEnd(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:211:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecLoopName(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:213:42: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecLoopTripCount(...) SSDM_SPEC_ATTR;
+                                          ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:215:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     int _ssdm_op_SpecStateBegin(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:216:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     int _ssdm_op_SpecStateEnd(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:218:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecInterface(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:220:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecPipeline(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:221:45: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecDataflowPipeline(...) SSDM_SPEC_ATTR;
+                                             ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:224:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecLatency(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:225:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecParallel(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:226:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecProtocol(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:227:39: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecOccurrence(...) SSDM_SPEC_ATTR;
+                                       ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:229:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecResource(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:230:42: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecResourceLimit(...) SSDM_SPEC_ATTR;
+                                          ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:231:35: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecCHCore(...) SSDM_SPEC_ATTR;
+                                   ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:232:35: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecFUCore(...) SSDM_SPEC_ATTR;
+                                   ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:233:35: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecIFCore(...) SSDM_SPEC_ATTR;
+                                   ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:234:35: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecIPCore(...) SSDM_SPEC_ATTR;
+                                   ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:235:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecKeepValue(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:236:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecMemCore(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:238:32: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecExt(...) SSDM_SPEC_ATTR;
+                                ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:243:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecArrayDimSize(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:245:33: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_RegionBegin(...) SSDM_SPEC_ATTR;
+                                 ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:246:31: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_RegionEnd(...) SSDM_SPEC_ATTR;
+                               ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:248:28: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_Unroll(...) SSDM_SPEC_ATTR;
+                            ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:249:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_UnrollRegion(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:251:31: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_InlineAll(...) SSDM_SPEC_ATTR;
+                               ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:252:32: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_InlineLoop(...) SSDM_SPEC_ATTR;
+                                ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:253:28: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_Inline(...) SSDM_SPEC_ATTR;
+                            ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:254:32: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_InlineSelf(...) SSDM_SPEC_ATTR;
+                                ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:255:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_InlineRegion(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:257:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecArrayMap(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:258:40: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecArrayPartition(...) SSDM_SPEC_ATTR;
+                                        ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:259:38: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecArrayReshape(...) SSDM_SPEC_ATTR;
+                                      ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:261:32: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecStream(...) SSDM_SPEC_ATTR;
+                                ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:263:30: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecExpr(...) SSDM_SPEC_ATTR;
+                              ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:264:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecExprBalance(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:266:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecDependence(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:268:35: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecLoopMerge(...) SSDM_SPEC_ATTR;
+                                   ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:269:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecLoopFlatten(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:270:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecLoopRewind(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:272:43: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecFuncInstantiation(...) SSDM_SPEC_ATTR;
+                                           ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:273:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecFuncBuffer(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:274:37: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecFuncExtract(...) SSDM_SPEC_ATTR;
+                                     ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:275:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecConstant(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:277:30: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_DataPack(...) SSDM_SPEC_ATTR;
+                              ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:278:34: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_SpecDataPack(...) SSDM_SPEC_ATTR;
+                                  ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:280:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecBitsMap(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:152:78: warning: 'overloadable' attribute directive ignored [-Wattributes]
+ #define SSDM_SPEC_ATTR __attribute__ ((nothrow)) __attribute__((overloadable))
+                                                                              ^
+C:/Xilinx/Vivado/2018.3/include/etc/autopilot_ssdm_op.h:281:36: note: in expansion of macro 'SSDM_SPEC_ATTR'
+     void _ssdm_op_SpecLicense(...) SSDM_SPEC_ATTR;
+                                    ^~~~~~~~~~~~~~
+D_p: 34793
+D_p: 164198
+D_p: 67087
+D_p: 102369
+D_p: 90061
+D_p: 104612
+D_p: 124443
+D_p: 129040
+D_p: 154559
+D_p: 87351
+D_p: 131428
+D_p: 85059
+D_p: 91454
+D_p: 85265
+D_p: 86874
+D_p: 118826
+D_p: 123440
+D_p: 112580
+D_p: 102223
+D_p: 134528
+D_p: 120941
+D_p: 114500
+D_p: 66172
+D_p: 255643
+D_p: 298301
+D_p: 326898
+D_p: 219655
+D_p: 240235
+D_p: 269235
+D_p: 333653
+D_p: 263762
+D_p: 209927
+D_p: 329044
+D_p: 300483
+D_p: 226711
+D_p: 362427
+D_p: 245988
+D_p: 276439
+D_p: 329742
+D_p: 364492
+D_p: 327189
+D_p: 284216
+D_p: 193678
+D_p: 313663
+D_p: 345478
+D_p: 274580
+D_p: 276453
+D_p: 372191
+D_p: 236258
+D_p: 201778
+D_p: 170818
+D_p: 366015
+D_p: 195860
+D_p: 117622
+D_p: 230943
+D_p: 298503
+D_p: 137999
+D_p: 467468
+D_p: 199979
+D_p: 157589
+D_p: 359998
+D_p: 208520
+D_p: 414642
+D_p: 199048
+D_p: 368820
+D_p: 264904
+D_p: 76521
+D_p: 276568
+D_p: 197346
+D_p: 235901
+D_p: 320064
+D_p: 349817
+D_p: 196114
+D_p: 353238
+D_p: 258548
+D_p: 316288
+D_p: 280804
+D_p: 362335
+D_p: 324687
+D_p: 404052
+D_p: 297315
+D_p: 161106
+D_p: 437574
+D_p: 278247
+D_p: 234970
+D_p: 288267
+D_p: 527150
+D_p: 164820
+D_p: 60569
+D_p: 145114
+D_p: 82434
+D_p: 144827
+D_p: 113973
+D_p: 176286
+D_p: 169387
+D_p: 79264
+D_p: 261987
+D_p: 139611
+D_p: 190849
+D_p: 81981
+D_p: 156229
+D_p: 68693
+D_p: 166535
+D_p: 165985
+D_p: 81311
+D_p: 183948
+D_p: 109610
+D_p: 305713
+D_p: 194890
+D_p: 148589
+D_p: 51748
+D_p: 77795
+D_p: 91685
+D_p: 50266
+D_p: 50253
+D_p: 142930
+D_p: 90701
+D_p: 54124
+D_p: 112100
+D_p: 88682
+D_p: 73424
+D_p: 163132
+D_p: 124783
+D_p: 81338
+D_p: 90214
+D_p: 81915
+D_p: 81293
+D_p: 73182
+D_p: 69438
+D_p: 84484
+D_p: 100401
+D_p: 61281
+D_p: 375873
+D_p: 116959
+D_p: 170931
+D_p: 96201
+D_p: 180406
+D_p: 89320
+D_p: 112386
+D_p: 116051
+D_p: 170112
+D_p: 114523
+D_p: 110262
+D_p: 140389
+D_p: 60946
+D_p: 111323
+D_p: 107581
+D_p: 94486
+D_p: 92332
+D_p: 158825
+D_p: 80822
+D_p: 66435
+D_p: 45552
+D_p: 68441
+D_p: 32894
+D_p: 49355
+D_p: 49205
+D_p: 50730
+D_p: 53395
+D_p: 61686
+D_p: 127149
+D_p: 241469
+D_p: 43943
+D_p: 59693
+D_p: 60452
+D_p: 232648
+D_p: 61526
+D_p: 357594
+D_p: 53556
+D_p: 95717
+D_p: 266244
+D_p: 54145
+D_p: 324640
+D_p: 43548
+D_p: 234392
+D_p: 242716
+D_p: 59286
+D_p: 254223
+D_p: 303848
+D_p: 193402
+D_p: 122689
+D_p: 248889
+D_p: 184676
+D_p: 332255
+D_p: 162965
+D_p: 270409
+D_p: 347615
+D_p: 151509
+D_p: 286659
+D_p: 273762
+D_p: 232693
+D_p: 203531
+D_p: 162596
+D_p: 355388
+D_p: 174300
+D_p: 281181
+D_p: 363191
+D_p: 104106
+D_p: 149066
+D_p: 40118
+D_p: 33824
+D_p: 43933
+D_p: 44692
+D_p: 33087
+D_p: 33247
+D_p: 34110
+D_p: 40913
+D_p: 36460
+D_p: 35055
+D_p: 35403
+D_p: 34059
+D_p: 33889
+D_p: 33121
+D_p: 33717
+D_p: 33247
+D_p: 37587
+D_p: 33943
+D_p: 33153
+D_p: 34496
+D_p: 37459
+D_p: 351058
+D_p: 312562
+D_p: 164408
+D_p: 202290
+D_p: 289964
+D_p: 221463
+D_p: 245812
+D_p: 317964
+D_p: 136033
+D_p: 281444
+D_p: 179280
+D_p: 305793
+D_p: 255068
+D_p: 300905
+D_p: 245533
+D_p: 270928
+D_p: 323234
+D_p: 178273
+D_p: 369619
+D_p: 296025
+D_p: 419116
+D_p: 364838
+D_p: 43163
+D_p: 32894
+D_p: 33354
+D_p: 32954
+D_p: 32910
+D_p: 32977
+D_p: 32914
+D_p: 32895
+D_p: 32896
+D_p: 33402
+D_p: 33023
+D_p: 32894
+D_p: 32974
+D_p: 32896
+Updating worst error for batch 0 Number#0The input number is 4030   The expected value is 242   the actual value is 241
+Updating worst error for batch 88 Number#20The input number is 2410   The expected value is 141   the actual value is 138
+The largest error was: 3
+The average error was: 0.0786743
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

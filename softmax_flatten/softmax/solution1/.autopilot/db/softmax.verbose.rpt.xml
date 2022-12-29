@@ -1,0 +1,146 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'softmax'" level="0">
+<item name = "Date">Wed Dec 28 18:55:54 2022
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">softmax</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu19eg-ffvc1760-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 4.320, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="process_1_U0">process_1, 11, 16394, 11, 16394, none</column>
+<column name="QuantAct_1_channel_U0">QuantAct_1_channel, 9, 16392, 9, 16392, none</column>
+<column name="divide_U0">divide, 20, 16403, 20, 16403, none</column>
+<column name="write_U0">write_r, 3, 2096644, 3, 2096644, none</column>
+<column name="subtract_max_U0">subtract_max, ?, ?, ?, ?, none</column>
+<column name="read_data_U0">read_data, 3, 16386, 3, 16386, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">130, -, 2423, 2863, -</column>
+<column name="Instance">2, 370, 23604, 29934, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">1968, 1968, 1045440, 522720, 128</specialColumn>
+<specialColumn name="Utilization (%)">6, 18, 2, 6, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="QuantAct_1_channel_U0">QuantAct_1_channel, 0, 116, 8400, 6131</column>
+<column name="divide_U0">divide, 2, 97, 2416, 5868</column>
+<column name="process_1_U0">process_1, 0, 148, 8384, 12674</column>
+<column name="read_data_U0">read_data, 0, 4, 1853, 1380</column>
+<column name="subtract_max_U0">subtract_max, 0, 4, 780, 1923</column>
+<column name="write_U0">write_r, 0, 1, 1771, 1958</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="in_proc_1_V_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="in_proc_1_iter_c_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_proc_1_iter_r_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_proc_2_V_V_U">15, 273, 214, 32, 256, 8192</column>
+<column name="in_proc_2_iter_c_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_proc_2_iter_r_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_quant_V_V_U">57, 1034, 1006, 2, 1024, 2048</column>
+<column name="in_quant_iter_c_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_quant_iter_r_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_sub_max_V_V_U">29, 529, 401, 32, 512, 16384</column>
+<column name="in_sub_max_c_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_sub_max_r_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_write_V_V_U">0, 5, 140, 2, 128, 256</column>
+<column name="in_write_iter_c_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="in_write_n_V_V_U">0, 5, 108, 2, 96, 192</column>
+<column name="max_input_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="sum_V_V_U">0, 5, 44, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="read_data_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="in_r_TDATA">in, 512, axis, in_V_data_V, pointer</column>
+<column name="in_r_TID">in, 8, axis, in_V_id_V, pointer</column>
+<column name="in_r_TDEST">in, 8, axis, in_V_dest_V, pointer</column>
+<column name="in_r_TUSER">in, 16, axis, in_V_user_V, pointer</column>
+<column name="in_r_TLAST">in, 1, axis, in_V_last_V, pointer</column>
+<column name="in_r_TVALID">in, 1, axis, in_V_last_V, pointer</column>
+<column name="in_r_TREADY">out, 1, axis, in_V_last_V, pointer</column>
+<column name="out_r_TDATA">out, 512, axis, out_V_data_V, pointer</column>
+<column name="out_r_TID">out, 8, axis, out_V_id_V, pointer</column>
+<column name="out_r_TDEST">out, 8, axis, out_V_dest_V, pointer</column>
+<column name="out_r_TUSER">out, 16, axis, out_V_user_V, pointer</column>
+<column name="out_r_TLAST">out, 1, axis, out_V_last_V, pointer</column>
+<column name="out_r_TVALID">out, 1, axis, out_V_last_V, pointer</column>
+<column name="out_r_TREADY">in, 1, axis, out_V_last_V, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, softmax, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, softmax, return value</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1672271755252">
+  <ports id="1" name="in_V_data_V" type="PortType" originalName="in.V.data.V" bitwidth="512">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="in_V_id_V" type="PortType" originalName="in.V.id.V" bitwidth="8">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="3" name="in_V_dest_V" type="PortType" originalName="in.V.dest.V" bitwidth="8">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="4" name="in_V_user_V" type="PortType" originalName="in.V.user.V" bitwidth="16">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="5" name="in_V_last_V" type="PortType" originalName="in.V.last.V" bitwidth="1">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="6" name="out_V_data_V" type="PortType" originalName="out.V.data.V" bitwidth="512" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="7" name="out_V_id_V" type="PortType" originalName="out.V.id.V" bitwidth="8" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="8" name="out_V_dest_V" type="PortType" originalName="out.V.dest.V" bitwidth="8" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="9" name="out_V_user_V" type="PortType" originalName="out.V.user.V" bitwidth="16" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="10" name="out_V_last_V" type="PortType" originalName="out.V.last.V" bitwidth="1" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <edges id="87" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="88" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="89" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="90" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="91" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="102" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.5"/>
+  <edges id="103" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.6"/>
+  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.7"/>
+  <edges id="105" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.8"/>
+  <edges id="106" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@ports.9"/>
+  <edges id="107" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="108" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="109" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="110" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="111" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="112" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="113" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="114" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="115" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="116" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="117" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="118" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="119" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="120" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="121" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="122" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="123" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="124" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="125" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="126" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="127" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="128" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="129" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="130" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="131" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="132" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="133" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="134" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="135" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="136" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="137" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="138" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="139" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="140" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="363" RegionName="softmax">
+    <basic_blocks id="84" name="softmax" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="node_77" lineNumber="722" fileName="top_incremental.cpp" fileDirectory=".." rtlName="read_data_U0" contextFuncName="softmax" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="722" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <dataInputObjs>in_V_data_V</dataInputObjs>
+        <dataInputObjs>in_V_id_V</dataInputObjs>
+        <dataInputObjs>in_V_dest_V</dataInputObjs>
+        <dataInputObjs>in_V_user_V</dataInputObjs>
+        <dataInputObjs>in_V_last_V</dataInputObjs>
+        <constName>read_data</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="node_78" lineNumber="723" fileName="top_incremental.cpp" fileDirectory=".." rtlName="subtract_max_U0" contextFuncName="softmax" opcode="call" nodeLabel="3.0" nodeLatency="1" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="723" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <constName>subtract_max</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="node_79" lineNumber="730" fileName="top_incremental.cpp" fileDirectory=".." rtlName="process_1_U0" contextFuncName="softmax" opcode="call" nodeLabel="5.0" nodeLatency="1" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="730" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <constName>process_1</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="node_80" lineNumber="740" fileName="top_incremental.cpp" fileDirectory=".." rtlName="QuantAct_1_channel_U0" contextFuncName="softmax" opcode="call" nodeLabel="7.0" nodeLatency="1" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="740" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <constName>QuantAct_1_channel</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="node_81" lineNumber="741" fileName="top_incremental.cpp" fileDirectory=".." rtlName="divide_U0" contextFuncName="softmax" opcode="call" nodeLabel="9.0" nodeLatency="1" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="741" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <constName>divide</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="node_82" lineNumber="744" fileName="top_incremental.cpp" fileDirectory=".." rtlName="write_U0" contextFuncName="softmax" opcode="call" nodeLabel="11.0" nodeLatency="1" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="744" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+        <dataOutputObjs>out_V_data_V</dataOutputObjs>
+        <dataOutputObjs>out_V_id_V</dataOutputObjs>
+        <dataOutputObjs>out_V_dest_V</dataOutputObjs>
+        <dataOutputObjs>out_V_user_V</dataOutputObjs>
+        <dataOutputObjs>out_V_last_V</dataOutputObjs>
+        <constName>write_r</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="node_83" lineNumber="745" fileName="top_incremental.cpp" fileDirectory=".." contextFuncName="softmax" opcode="ret" nodeLabel="13.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="top_incremental.cpp" linenumber="745" fileDirectory="C:\Users\Andy\Desktop\ECE496_flatten" functionName="softmax"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="top_incremental.cpp">
+        <validLinenumbers>722</validLinenumbers>
+        <validLinenumbers>723</validLinenumbers>
+        <validLinenumbers>730</validLinenumbers>
+        <validLinenumbers>740</validLinenumbers>
+        <validLinenumbers>741</validLinenumbers>
+        <validLinenumbers>744</validLinenumbers>
+        <validLinenumbers>745</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <moduleNodes realName="grp_subtract_max_fu_206">
+    <nodeIds>78</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_process_1_fu_136">
+    <nodeIds>79</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_write_r_fu_186">
+    <nodeIds>82</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_read_data_fu_224">
+    <nodeIds>77</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_QuantAct_1_channel_fu_152">
+    <nodeIds>80</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_divide_fu_170">
+    <nodeIds>81</nodeIds>
+  </moduleNodes>
+  <ioPorts name="in_V_data_V">
+    <contents name="call">
+      <nodeIds>77</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_V_dest_V">
+    <contents name="call">
+      <nodeIds>77</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_V_id_V">
+    <contents name="call">
+      <nodeIds>77</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_V_last_V">
+    <contents name="call">
+      <nodeIds>77</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in_V_user_V">
+    <contents name="call">
+      <nodeIds>77</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_V_data_V">
+    <contents name="call">
+      <nodeIds>82</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_V_dest_V">
+    <contents name="call">
+      <nodeIds>82</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_V_id_V">
+    <contents name="call">
+      <nodeIds>82</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_V_last_V">
+    <contents name="call">
+      <nodeIds>82</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out_V_user_V">
+    <contents name="call">
+      <nodeIds>82</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1"/>
+    <states id="2">
+      <operations id="77" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="77" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="78" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="78" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="79" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="79" stage="1" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="80" stage="2" latency="2"/>
+    </states>
+    <states id="9">
+      <operations id="80" stage="1" latency="2"/>
+    </states>
+    <states id="10">
+      <operations id="81" stage="2" latency="2"/>
+    </states>
+    <states id="11">
+      <operations id="81" stage="1" latency="2"/>
+    </states>
+    <states id="12">
+      <operations id="82" stage="2" latency="2"/>
+    </states>
+    <states id="13">
+      <operations id="82" stage="1" latency="2"/>
+    </states>
+    <states id="14">
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="softmax" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mIsDfPipe="true">
+      <basicBlocks>84</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.3/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.4/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.5/@pins.0/@inst">
+        <processe_list name="read_data_U0" ssdmobj_id="77">
+          <pins>
+            <port name="in_V_data_V" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_V_id_V" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_V_dest_V" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_V_user_V" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_V_last_V" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_write_n_V_V" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_sub_max_r_V_V" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_sub_max_c_V_V" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="max_input_V_V" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+          <pins>
+            <port name="in_sub_max_V_V" type="BUSType"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </pins>
+        </processe_list>
+        <processe_list name="subtract_max_U0" ssdmobj_id="78">
+          <pins>
+            <port name="in_sub_max_c_V_V"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="in_sub_max_r_V_V"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="in_proc_1_iter_r_V_V" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="in_proc_1_iter_c_V_V" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="max_input_V_V"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="in_sub_max_V_V"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+          <pins>
+            <port name="in_proc_1_V_V" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </pins>
+        </processe_list>
+        <processe_list name="process_1_U0" ssdmobj_id="79">
+          <pins>
+            <port name="in_proc_1_iter_c_V_V"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+          <pins>
+            <port name="in_proc_1_iter_r_V_V"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+          <pins>
+            <port name="in_quant_iter_r_V_V" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+          <pins>
+            <port name="in_quant_iter_c_V_V" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+          <pins>
+            <port name="in_proc_1_V_V"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+          <pins>
+            <port name="in_quant_V_V" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </pins>
+        </processe_list>
+        <processe_list name="QuantAct_1_channel_U0" ssdmobj_id="80">
+          <pins>
+            <port name="in_quant_iter_c_V_V"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="in_quant_iter_r_V_V"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="in_proc_2_iter_r_V_V" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="in_proc_2_iter_c_V_V" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="sum_V_V" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="in_quant_V_V"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+          <pins>
+            <port name="in_proc_2_V_V" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </pins>
+        </processe_list>
+        <processe_list name="divide_U0" ssdmobj_id="81">
+          <pins>
+            <port name="in_proc_2_iter_c_V_V"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+          <pins>
+            <port name="in_proc_2_iter_r_V_V"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+          <pins>
+            <port name="in_write_iter_c_V_V" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+          <pins>
+            <port name="sum_V_V"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+          <pins>
+            <port name="in_proc_2_V_V"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+          <pins>
+            <port name="in_write_V_V" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </pins>
+        </processe_list>
+        <processe_list name="write_U0" ssdmobj_id="82">
+          <pins>
+            <port name="out_V_data_V" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="out_V_id_V" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="out_V_dest_V" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="out_V_user_V" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="out_V_last_V" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="in_write_n_V_V"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="in_write_iter_c_V_V"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+          <pins>
+            <port name="in_write_V_V"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="2" bitwidth="96" name="in_write_n_V_V" ssdmobj_id="11">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_sub_max_r_V_V" ssdmobj_id="12">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_sub_max_c_V_V" ssdmobj_id="13">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="max_input_V_V" ssdmobj_id="14">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="32" bitwidth="512" name="in_sub_max_V_V" ssdmobj_id="15">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="read_data_U0" ssdmobj_id="77" object_id="_90"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_proc_1_iter_r_V_V" ssdmobj_id="16">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_proc_1_iter_c_V_V" ssdmobj_id="17">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="512" name="in_proc_1_V_V" ssdmobj_id="18">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="subtract_max_U0" ssdmobj_id="78" object_id="_112"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_quant_iter_r_V_V" ssdmobj_id="19">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_quant_iter_c_V_V" ssdmobj_id="20">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="1024" name="in_quant_V_V" ssdmobj_id="21">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="process_1_U0" ssdmobj_id="79" object_id="_128"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_proc_2_iter_r_V_V" ssdmobj_id="22">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_proc_2_iter_c_V_V" ssdmobj_id="23">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="sum_V_V" ssdmobj_id="24">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="32" bitwidth="256" name="in_proc_2_V_V" ssdmobj_id="25">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="QuantAct_1_channel_U0" ssdmobj_id="80" object_id="_142"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="32" name="in_write_iter_c_V_V" ssdmobj_id="26">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="128" name="in_write_V_V" ssdmobj_id="27">
+          <source>
+            <port name="in" dir="DirEnd"/>
+            <inst name="divide_U0" ssdmobj_id="81" object_id="_158"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirEnd" type="BUSType"/>
+            <inst name="write_U0" ssdmobj_id="82" object_id="_172"/>
+          </sink>
+        </channel_list>
+      </mDfPipe>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
