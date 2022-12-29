@@ -1,0 +1,7 @@
+Running: xsim.dir/softmax/xsimk.exe -simmode gui -wdb softmax.wdb -simrunnum 0 -socket 9404
+Design successfully loaded
+Design Loading Memory Usage: 7128 KB (Peak: 7128 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 9808 KB (Peak: 9808 KB)
+Simulation CPU Usage: 46 ms

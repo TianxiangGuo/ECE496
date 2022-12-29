@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="top_incremental.cpp" path="C:\Users\Andy\Desktop\ECE496_flatten\top_incremental.cpp"/>
+    <originFiles name="parameters.hpp" path="C:\Users\Andy\Desktop\ECE496_flatten\parameters.hpp"/>
+    <originFiles name="exponents.hpp" path="C:\Users\Andy\Desktop\ECE496_flatten\exponents.hpp"/>
+    <originFiles name="common.hpp" path="C:\Users\Andy\Desktop\ECE496_flatten\common.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="C:\Users\Andy\Desktop\ECE496_flatten\main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

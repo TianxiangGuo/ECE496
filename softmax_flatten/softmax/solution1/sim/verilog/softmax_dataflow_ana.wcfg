@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="softmax.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_softmax_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="AESL_inst_softmax_group">
+      <obj_property name="label">AESL_inst_softmax</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/read_data_U0_activity">
+         <obj_property name="ElementShortName">read_data_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">read_data_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/subtract_max_U0_activity">
+         <obj_property name="ElementShortName">subtract_max_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">subtract_max_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/process_1_U0_activity">
+         <obj_property name="ElementShortName">process_1_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">process_1_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/QuantAct_1_channel_U0_activity">
+         <obj_property name="ElementShortName">QuantAct_1_channel_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">QuantAct_1_channel_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/divide_U0_activity">
+         <obj_property name="ElementShortName">divide_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">divide_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/write_U0_activity">
+         <obj_property name="ElementShortName">write_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">write_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="read_data_U0_group">
+         <obj_property name="label">read_data_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="read_data_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="read_data_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="read_data_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_write_n_V_V_group">
+               <obj_property name="label">in_write_n_V_V(in_write_n_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_write_n_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_n_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_write_n_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_write_n_V_V_full_n">
+                  <obj_property name="ElementShortName">in_write_n_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_write_n_V_V_write">
+                  <obj_property name="ElementShortName">in_write_n_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_sub_max_r_V_V_group">
+               <obj_property name="label">in_sub_max_r_V_V(in_sub_max_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_r_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_r_V_V_full_n">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_r_V_V_write">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_sub_max_c_V_V_group">
+               <obj_property name="label">in_sub_max_c_V_V(in_sub_max_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_c_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_c_V_V_full_n">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_c_V_V_write">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="max_input_V_V_group">
+               <obj_property name="label">max_input_V_V(max_input_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/max_input_V_V_blk_n">
+                  <obj_property name="ElementShortName">max_input_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/max_input_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/max_input_V_V_full_n">
+                  <obj_property name="ElementShortName">max_input_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/max_input_V_V_write">
+                  <obj_property name="ElementShortName">max_input_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_sub_max_V_V_group">
+               <obj_property name="label">in_sub_max_V_V(in_sub_max_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_V_V_full_n">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/read_data_U0/in_sub_max_V_V_write">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="subtract_max_U0_group">
+         <obj_property name="label">subtract_max_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="subtract_max_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_sub_max_c_V_V_group">
+               <obj_property name="label">in_sub_max_c_V_V(in_sub_max_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_c_V_V_dout">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_c_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_c_V_V_read">
+                  <obj_property name="ElementShortName">in_sub_max_c_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_c_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_sub_max_r_V_V_group">
+               <obj_property name="label">in_sub_max_r_V_V(in_sub_max_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_r_V_V_dout">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_r_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_r_V_V_read">
+                  <obj_property name="ElementShortName">in_sub_max_r_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_r_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="max_input_V_V_group">
+               <obj_property name="label">max_input_V_V(max_input_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/max_input_V_V_blk_n">
+                  <obj_property name="ElementShortName">max_input_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/max_input_V_V_dout">
+                  <obj_property name="ElementShortName">max_input_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/max_input_V_V_empty_n">
+                  <obj_property name="ElementShortName">max_input_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/max_input_V_V_read">
+                  <obj_property name="ElementShortName">max_input_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">max_input_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_sub_max_V_V_group">
+               <obj_property name="label">in_sub_max_V_V(in_sub_max_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_V_V_dout">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_dout[511:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_dout[511:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_sub_max_V_V_read">
+                  <obj_property name="ElementShortName">in_sub_max_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_sub_max_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="subtract_max_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="subtract_max_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_proc_1_iter_r_V_V_group">
+               <obj_property name="label">in_proc_1_iter_r_V_V(in_proc_1_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_r_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_r_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_r_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_1_iter_c_V_V_group">
+               <obj_property name="label">in_proc_1_iter_c_V_V(in_proc_1_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_c_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_c_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_iter_c_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_1_V_V_group">
+               <obj_property name="label">in_proc_1_V_V(in_proc_1_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/subtract_max_U0/in_proc_1_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="process_1_U0_group">
+         <obj_property name="label">process_1_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="process_1_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_proc_1_iter_c_V_V_group">
+               <obj_property name="label">in_proc_1_iter_c_V_V(in_proc_1_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_c_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_c_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_c_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_1_iter_c_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_c_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_1_iter_r_V_V_group">
+               <obj_property name="label">in_proc_1_iter_r_V_V(in_proc_1_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_r_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_r_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_iter_r_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_1_iter_r_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_iter_r_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_1_V_V_group">
+               <obj_property name="label">in_proc_1_V_V(in_proc_1_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_dout[511:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_dout[511:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_proc_1_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_1_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_1_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="process_1_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="process_1_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_quant_iter_r_V_V_group">
+               <obj_property name="label">in_quant_iter_r_V_V(in_quant_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_r_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_r_V_V_full_n">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_r_V_V_write">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_quant_iter_c_V_V_group">
+               <obj_property name="label">in_quant_iter_c_V_V(in_quant_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_c_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_c_V_V_full_n">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_iter_c_V_V_write">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_quant_V_V_group">
+               <obj_property name="label">in_quant_V_V(in_quant_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_V_V_full_n">
+                  <obj_property name="ElementShortName">in_quant_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/process_1_U0/in_quant_V_V_write">
+                  <obj_property name="ElementShortName">in_quant_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="QuantAct_1_channel_U0_group">
+         <obj_property name="label">QuantAct_1_channel_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="QuantAct_1_channel_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_quant_iter_c_V_V_group">
+               <obj_property name="label">in_quant_iter_c_V_V(in_quant_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_c_V_V_dout">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_c_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_c_V_V_read">
+                  <obj_property name="ElementShortName">in_quant_iter_c_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_c_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_quant_iter_r_V_V_group">
+               <obj_property name="label">in_quant_iter_r_V_V(in_quant_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_r_V_V_dout">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_r_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_iter_r_V_V_read">
+                  <obj_property name="ElementShortName">in_quant_iter_r_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_iter_r_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_quant_V_V_group">
+               <obj_property name="label">in_quant_V_V(in_quant_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_quant_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_V_V_dout">
+                  <obj_property name="ElementShortName">in_quant_V_V_dout[1023:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_dout[1023:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_quant_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_quant_V_V_read">
+                  <obj_property name="ElementShortName">in_quant_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_quant_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="QuantAct_1_channel_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="QuantAct_1_channel_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_proc_2_iter_r_V_V_group">
+               <obj_property name="label">in_proc_2_iter_r_V_V(in_proc_2_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_r_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_r_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_r_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_2_iter_c_V_V_group">
+               <obj_property name="label">in_proc_2_iter_c_V_V(in_proc_2_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_c_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_c_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_iter_c_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="sum_V_V_group">
+               <obj_property name="label">sum_V_V(sum_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/sum_V_V_blk_n">
+                  <obj_property name="ElementShortName">sum_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/sum_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/sum_V_V_full_n">
+                  <obj_property name="ElementShortName">sum_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/sum_V_V_write">
+                  <obj_property name="ElementShortName">sum_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_2_V_V_group">
+               <obj_property name="label">in_proc_2_V_V(in_proc_2_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_V_V_full_n">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/QuantAct_1_channel_U0/in_proc_2_V_V_write">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="divide_U0_group">
+         <obj_property name="label">divide_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="divide_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_proc_2_iter_c_V_V_group">
+               <obj_property name="label">in_proc_2_iter_c_V_V(in_proc_2_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_c_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_c_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_c_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_2_iter_c_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_c_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_2_iter_r_V_V_group">
+               <obj_property name="label">in_proc_2_iter_r_V_V(in_proc_2_iter_r_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_r_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_r_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_r_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_iter_r_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_2_iter_r_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_iter_r_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="sum_V_V_group">
+               <obj_property name="label">sum_V_V(sum_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/sum_V_V_blk_n">
+                  <obj_property name="ElementShortName">sum_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/sum_V_V_dout">
+                  <obj_property name="ElementShortName">sum_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/sum_V_V_empty_n">
+                  <obj_property name="ElementShortName">sum_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/sum_V_V_read">
+                  <obj_property name="ElementShortName">sum_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_proc_2_V_V_group">
+               <obj_property name="label">in_proc_2_V_V(in_proc_2_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_V_V_dout">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_dout[255:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_dout[255:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_proc_2_V_V_read">
+                  <obj_property name="ElementShortName">in_proc_2_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_proc_2_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="divide_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="divide_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_write_iter_c_V_V_group">
+               <obj_property name="label">in_write_iter_c_V_V(in_write_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_iter_c_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_iter_c_V_V_full_n">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_iter_c_V_V_write">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_write_V_V_group">
+               <obj_property name="label">in_write_V_V(in_write_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_V_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_V_V_full_n">
+                  <obj_property name="ElementShortName">in_write_V_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/divide_U0/in_write_V_V_write">
+                  <obj_property name="ElementShortName">in_write_V_V_write</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="write_U0_group">
+         <obj_property name="label">write_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="write_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="in_write_n_V_V_group">
+               <obj_property name="label">in_write_n_V_V(in_write_n_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_n_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_n_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_n_V_V_dout">
+                  <obj_property name="ElementShortName">in_write_n_V_V_dout[95:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_dout[95:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_n_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_write_n_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_n_V_V_read">
+                  <obj_property name="ElementShortName">in_write_n_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_write_n_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_write_iter_c_V_V_group">
+               <obj_property name="label">in_write_iter_c_V_V(in_write_iter_c_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_iter_c_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_iter_c_V_V_dout">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_iter_c_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_iter_c_V_V_read">
+                  <obj_property name="ElementShortName">in_write_iter_c_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_write_iter_c_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="in_write_V_V_group">
+               <obj_property name="label">in_write_V_V(in_write_V_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_V_V_blk_n">
+                  <obj_property name="ElementShortName">in_write_V_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_V_V_dout">
+                  <obj_property name="ElementShortName">in_write_V_V_dout[127:0]</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_dout[127:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_V_V_empty_n">
+                  <obj_property name="ElementShortName">in_write_V_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/in_write_V_V_read">
+                  <obj_property name="ElementShortName">in_write_V_V_read</obj_property>
+                  <obj_property name="ObjectShortName">in_write_V_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="write_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_softmax_top/AESL_inst_softmax/write_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="write_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

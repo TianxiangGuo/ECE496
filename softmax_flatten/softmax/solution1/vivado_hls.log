@@ -1,0 +1,45 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vivado/2018.3/scripts/vivado_hls/hls.tcl -notrace
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Andy' on host 'desktop-ck9c8bm' (Windows NT_amd64 version 6.2) on Thu Dec 22 14:21:25 -0500 2022
+INFO: [HLS 200-10] In directory 'C:/Users/Andy/Desktop/ECE496_try_incremental/softmax/solution1'
+INFO: [HLS 200-10] Opening project 'C:/Users/Andy/Desktop/ECE496_try_incremental/softmax/solution1/softmax'.
+WARNING: [HLS 200-40] Cannot find design file 'top_incremental.cpp'
+WARNING: [HLS 200-40] Cannot find design file 'top.hpp'
+WARNING: [HLS 200-40] Cannot find design file 'parameters.hpp'
+WARNING: [HLS 200-40] Cannot find design file 'exponents.hpp'
+WARNING: [HLS 200-40] Cannot find design file 'common.hpp'
+WARNING: [HLS 200-40] Cannot find test bench file 'main_2.cpp'
+INFO: [HLS 200-10] Opening solution 'C:/Users/Andy/Desktop/ECE496_try_incremental/softmax/solution1/softmax/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.625ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+4
+    while executing
+"source [lindex $::argv 1] "
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 { source [lindex $::argv 1] } "
+
+INFO: [Common 17-206] Exiting vivado_hls at Thu Dec 22 14:21:26 2022...

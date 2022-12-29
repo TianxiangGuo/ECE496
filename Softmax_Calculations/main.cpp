@@ -40,7 +40,7 @@ int main() {
     // -6860 to -7349: 1
     // -6574 to -6859: 2
     // The rest: look up from the memory block.
-    for (int i = 0; i < 6574; i++) {
+    for (int i = 0; i < 14700; i++) {
         cout<<results[i].second<<", "<<endl;
 
     }
