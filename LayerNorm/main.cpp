@@ -124,8 +124,8 @@ int main() {
 						// print output
 						cout << ap_int<32>(temp.data.range(32*(j+1)-1, 32*j)) << " ";
 						//print error in %
-		//				ap_int<32> target = target_output[iter][j + i*16];
-		//				printf("%0.2lf%\t",(double)(ap_int<32>(temp.data.range(32*(j+1)-1, 32*j)) - target) / (double)(target) * 100);
+//						ap_int<32> target = target_output[iter][j + i*16];
+//						printf("%0.2lf%\t",(double)(ap_int<32>(temp.data.range(32*(j+1)-1, 32*j)) - target) / (double)(target) * 100);
 					}
 
 					cout<<endl;

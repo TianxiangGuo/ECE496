@@ -25,11 +25,9 @@ void save_data(
 
 	ap_int<config_t::DATA_WIDTH + config_t::LOG_NUM_CHANNEL> sum[config_t::VEC_WIDTH];
 	ap_int<config_t::DATA_WIDTH + config_t::LOG_NUM_CHANNEL> sum_val;
-	ap_int<config_t::DATA_WIDTH> buffer[config_t::NUM_CHANNEL];
 	ap_int<config_t::DATA_WIDTH> mean;
 
 #pragma HLS ARRAY_PARTITION variable=sum complete dim=0
-#pragma HLS ARRAY_PARTITION variable=buffer complete dim=0
 
 	// save value
 	for (int i=0; i<N; i++) {
@@ -53,7 +51,6 @@ void save_data(
 			for (int k=0; k < config_t::VEC_WIDTH; k++) {
 				#pragma HLS unroll
 				ap_int<config_t::DATA_WIDTH> read = temp.data.range(config_t::DATA_WIDTH * (k+1) - 1, config_t::DATA_WIDTH * k);
-				buffer[j * config_t::VEC_WIDTH + k] = read;
 
 				sum[k] += read;
 
@@ -113,12 +110,12 @@ void compute_var(
 	for (int i=0; i<N; i++) {
 #pragma HLS loop_tripcount min=1 max=512
 //		while(in_mean.empty())	ap_wait_n(1);
-		mean = in_mean.read();
 //		cout<<"var mean: "<<mean<<endl;
 		for (int l=0; l<config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; l++) {
 			#pragma HLS pipeline ii=1
 
 			if (l == 0) {
+				mean = in_mean.read();
 				for (int j=0; j<config_t::VEC_WIDTH; j++) {
 					#pragma HLS unroll
 					var[j] = 0;
@@ -309,7 +306,6 @@ void compute_y(
 	for (int i=0; i<N; i++) {
 #pragma HLS loop_tripcount min=1 max=512
 
-		mean = in_mean.read();
 //		for (int j=0; j<config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; j++) {
 //			#pragma HLS pipeline ii=1
 //			for (int k=0; k<config_t::UNROLL_FACTOR; k++) {
@@ -323,6 +319,7 @@ void compute_y(
 			#pragma HLS pipeline ii=1
 
 			if (j == 0) {
+				mean = in_mean.read();
 				factor = in_factor.read();
 			}
 
@@ -402,17 +399,17 @@ void LayerNorm(
 #pragma HLS dataflow
 #pragma HLS inline
 
-	hls::stream<ap_int<32> > n_pipe1;
-	hls::stream<ap_int<32> > n_pipe2;
-	hls::stream<ap_int<32> > n_pipe3;
-	hls::stream<ap_int<32> > n_pipe4;
-	hls::stream<ap_int<32> > mean_pipe1;
-	hls::stream<ap_int<32> > mean_pipe2;
-	hls::stream<ap_int<config_t::DATA_WIDTH> > in_compute[config_t::UNROLL_FACTOR];
-	hls::stream<ap_int<config_t::DATA_WIDTH> > in_compute_y[config_t::UNROLL_FACTOR];
-	hls::stream<ap_uint<config_t::DATA_WIDTH> > in_sqrt;
-	hls::stream<ap_uint<config_t::DATA_WIDTH> > in_compute_y_factor;
-	hls::stream<ap_uint<config_t::DATA_WIDTH> > in_write[config_t::UNROLL_FACTOR];
+	static hls::stream<ap_int<32> > n_pipe1;
+	static hls::stream<ap_int<32> > n_pipe2;
+	static hls::stream<ap_int<32> > n_pipe3;
+	static hls::stream<ap_int<32> > n_pipe4;
+	static hls::stream<ap_int<32> > mean_pipe1;
+	static hls::stream<ap_int<32> > mean_pipe2;
+	static hls::stream<ap_int<config_t::DATA_WIDTH> > in_compute[config_t::UNROLL_FACTOR];
+	static hls::stream<ap_int<config_t::DATA_WIDTH> > in_compute_y[config_t::UNROLL_FACTOR];
+	static hls::stream<ap_uint<config_t::DATA_WIDTH> > in_sqrt;
+	static hls::stream<ap_uint<config_t::DATA_WIDTH> > in_compute_y_factor;
+	static hls::stream<ap_uint<config_t::DATA_WIDTH> > in_write[config_t::UNROLL_FACTOR];
 
 #pragma HLS stream variable=in_compute depth=512
 #pragma HLS stream variable=in_compute_y depth=512
