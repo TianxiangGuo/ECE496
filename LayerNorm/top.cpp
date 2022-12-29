@@ -12,6 +12,9 @@ void layer_norm(
 #pragma HLS INTERFACE axis port=in
 #pragma HLS INTERFACE axis port=out
 
-//	LayerNorm<Config_LayerNorm_1>(sqrt_table, bias, in, out);
 	LayerNorm<Config_LayerNorm_1>(bias, in, out);
+
 }
+
+
+
