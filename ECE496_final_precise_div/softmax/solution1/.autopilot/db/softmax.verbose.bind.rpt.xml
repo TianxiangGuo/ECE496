@@ -1,0 +1,51 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'softmax'" level="0">
+<item name = "Date">Mon Jan  9 18:22:12 2023
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">softmax</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu19eg-ffvc1760-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 4.320, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_softmax_divide_preci_fu_136">softmax_divide_preci, ?, ?, ?, ?, none</column>
+<column name="grp_process_1_fu_152">process_1, 11, 16394, 11, 16394, none</column>
+<column name="grp_QuantAct_1_channel_m_fu_168">QuantAct_1_channel_m, 8, 16391, 8, 16391, none</column>
+<column name="grp_write_r_fu_186">write_r, 3, 2096644, 3, 2096644, none</column>
+<column name="grp_subtract_max_fu_206">subtract_max, ?, ?, ?, ?, none</column>
+<column name="grp_read_data_fu_224">read_data, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
