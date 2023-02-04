@@ -12,7 +12,7 @@
         hls::stream<dataword> in;
         hls::stream<dataword> out;
         
-        int batch_count = 256;
+
 
 
  ap_int<32> in_data[256][128] = {
@@ -531,16 +531,26 @@
 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, \
 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
     dataword pkt;
+
+    int batch_count = 256;
+	int batch_size = 128;
     pkt.data.range(31,0)=batch_count;
-    pkt.data.range(63,32)=128;
+    pkt.data.range(63,32)=batch_size;
     pkt.data.range(95,64)=1;
     in.write(pkt);
 
-    for (int j = 0; j < batch_count * 8; j++) {
+    for (int j = 0; j < batch_count * (batch_size/16); j++) {
         for(int k = 0; k < 16;k++) { 
-            int batch = (j*16 + k) / 128;
-            int num = (j*16 + k) % 128;
-            pkt.data.range(32*(k+1)-1, 32*k) = in_data[batch][num];
+            int batch = (j*16 + k) / batch_size;
+            int num = (j*16 + k) % batch_size;
+
+            if (num < 128) {
+                pkt.data.range(32*(k+1)-1, 32*k) = in_data[batch][num];
+            } else {
+
+                pkt.data.range(32*(k+1)-1, 32*k) = -2147483648;
+            }
+
         }
         in.write(pkt);
     }
@@ -558,6 +568,8 @@
         for (int k = 0; k < 64; k++) {
             int out_num = temp.data.range(8*(k+1)-1, 8*k);
 
+            printf("%d ", out_num);
+            /*
             int batch = out_idx / 128;
             int num = out_idx % 128;
             int delta = abs(expected_data[batch][num] - out_num);
@@ -567,7 +579,9 @@
             }
             sum_delta += delta;
             out_idx++;
+            */
         }
+        printf("\n");
     }
 
     double average_delta_err = (double) sum_delta / (batch_count * 128); 

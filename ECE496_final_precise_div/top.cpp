@@ -21,6 +21,7 @@ void read_data(
 	unsigned int unquant_N = pkt.data.range(95, 64);
 	unsigned int unrolled_iterations = batch_size / config_t::UNROLL_FACTOR;
 	ap_uint<96> all_metadata = pkt.data.range(96, 0);
+	const ap_int<config_t::DATA_WIDTH> neg_inf = 1 << (config_t::DATA_WIDTH - 1);
 
 	out_meta.write(all_metadata);
 	out_num_batches.write(num_batches);
@@ -42,14 +43,13 @@ void read_data(
 	for (int batch = 0; batch < num_batches; batch++) {
 #pragma HLS loop_tripcount min=1 max=512
 
-		for (int packet = 0; packet < batch_size / config_t::VEC_WIDTH;
-				packet++) {
+		for (int packet = 0; packet < batch_size / config_t::VEC_WIDTH; packet++) {
 			// This loop can be pipelined, and take in one data per cycle
 #pragma HLS pipeline ii=1
 
 			// reset
 			if (packet == 0) {
-				max_val = 0;
+				max_val = neg_inf;
 			}
 
 			pkt = in.read();
@@ -75,16 +75,12 @@ void read_data(
 				}
 			}
 
-			for (int iter = 0;
-					iter < config_t::VEC_WIDTH / config_t::UNROLL_FACTOR;
-					iter++) {
+			for (int iter = 0; iter < config_t::VEC_WIDTH / config_t::UNROLL_FACTOR; iter++) {
 #pragma HLS pipeline ii=1
 				ap_int<config_t::DATA_WIDTH * config_t::UNROLL_FACTOR> out_data;
 				for (int num = 0; num < config_t::UNROLL_FACTOR; num++) {
 #pragma HLS unroll
-					out_data.range(config_t::DATA_WIDTH * (num + 1) - 1,
-							config_t::DATA_WIDTH * num) = buffer[num
-							+ iter * config_t::UNROLL_FACTOR];
+					out_data.range(config_t::DATA_WIDTH * (num + 1) - 1, config_t::DATA_WIDTH * num) = buffer[num + iter * config_t::UNROLL_FACTOR];
 				}
 				out.write(out_data);
 			}
@@ -155,8 +151,9 @@ void subtract_max(hls::stream<ap_uint<32> >& in_num_batches,
 				#pragma HLS unroll
 				ap_int<config_t::DATA_WIDTH> read = in_data.range(config_t::DATA_WIDTH * (num + 1) - 1, config_t::DATA_WIDTH * num);
 				if (read == neg_inf) {
-					out_data.range(config_t::DATA_WIDTH * (num + 1) - 1, config_t::DATA_WIDTH * num) = read;
+					out_data.range(config_t::DATA_WIDTH * (num + 1) - 1, config_t::DATA_WIDTH * num) = neg_inf;
 				} else {
+					// there's an implicit assumption that read will never be close to neg_inf (but not neg_inf)
 					out_data.range(config_t::DATA_WIDTH * (num + 1) - 1, config_t::DATA_WIDTH * num) = read - max_val;
 				}
 			}
@@ -426,8 +423,9 @@ void softmax(hls::stream<dataword>& in, hls::stream<dataword>& out) {
 	static hls::stream<ap_uint<32> > in_sub_max_c;
 	static hls::stream<ap_int<config_t::DATA_WIDTH * config_t::UNROLL_FACTOR> > in_sub_max;
 
-#pragma HLS stream variable=in_sub_max depth=32
-#pragma HLS stream variable=in_proc_2 depth=32
+	const static int fifo_depth = (config_t::NUM_CHANNEL/config_t::UNROLL_FACTOR)+1;
+#pragma HLS stream variable=in_proc_2 depth=fifo_depth
+#pragma HLS stream variable=in_sub_max depth=fifo_depth
 
 	//	 save buffer
 	read_data(in, in_write_n, in_sub_max_r, in_sub_max_c, in_sub_max,

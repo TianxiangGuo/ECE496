@@ -16,7 +16,7 @@ struct config_t
 	static const unsigned DATA_WIDTH=32;			// Input number bit size
 	static const unsigned OUT_DATA_WIDTH=8;			// Output number bit size (up to 256 unsigned)
 	static const unsigned QUANT_DATA_WIDTH=16;		// Quantized number bit size (up to 32767 unsigned)
-	static const unsigned UNROLL_FACTOR = 16;    	//Assume power of 2, and less than batch size. The larger this number, the more area, but more parallelism
+	static const unsigned UNROLL_FACTOR = 2;    	//Assume power of 2, and less than batch size. The larger this number, the more area, but more parallelism
 	static const unsigned MAX_SEQUENCE_LEN=MAX_BATCH_SIZE;	 // This affects simulation only, when HLS tries to measure how many times a loop is run.
 	static const unsigned VEC_WIDTH=BUS_WIDTH/DATA_WIDTH;  // how many number are in one input packet, 16
 	static const unsigned OUT_VEC_WIDTH=BUS_WIDTH/OUT_DATA_WIDTH; // how many numbers are in one output packet, 64
