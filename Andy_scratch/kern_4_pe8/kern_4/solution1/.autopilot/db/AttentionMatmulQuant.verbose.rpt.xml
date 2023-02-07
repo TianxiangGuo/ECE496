@@ -1,0 +1,198 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'AttentionMatmulQuant'" level="0">
+<item name = "Date">Tue Feb  7 00:11:07 2023
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">kern_4</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu19eg-ffvc1760-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 3.676, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">11, 131, 11, 131, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">8, 128, 2, 1, 1, 8 ~ 128, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 229, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 264, -</column>
+<column name="Register">-, -, 685, -, -</column>
+<specialColumn name="Available">1968, 1968, 1045440, 522720, 128</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_1_fu_405_p2">+, 0, 0, 39, 32, 1</column>
+<column name="tmp_4_fu_334_p2">+, 0, 0, 39, 5, 32</column>
+<column name="ap_block_pp0_stage0_01001">and, 0, 0, 2, 1, 1</column>
+<column name="in_V_id_V20_status">and, 0, 0, 2, 1, 1</column>
+<column name="out_V_id_V1_status">and, 0, 0, 2, 1, 1</column>
+<column name="sel_tmp2_fu_369_p2">and, 0, 0, 2, 1, 1</column>
+<column name="exitcond_fu_400_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_fu_322_p2">icmp, 0, 0, 20, 28, 1</column>
+<column name="tmp_3_fu_328_p2">icmp, 0, 0, 9, 4, 1</column>
+<column name="tmp_7_fu_411_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state4_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="sel_tmp_fu_357_p3">select, 0, 0, 32, 1, 5</column>
+<column name="val_assign_fu_374_p3">select, 0, 0, 32, 1, 32</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+<column name="sel_tmp1_fu_364_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">27, 5, 1, 5</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">15, 3, 1, 3</column>
+<column name="i_reg_248">9, 2, 32, 64</column>
+<column name="in_V_data_V1_blk_n">9, 2, 1, 2</column>
+<column name="in_V_dest_V3_blk_n">9, 2, 1, 2</column>
+<column name="in_V_id_V2_blk_n">9, 2, 1, 2</column>
+<column name="in_V_last_V5_blk_n">9, 2, 1, 2</column>
+<column name="in_V_user_V4_blk_n">9, 2, 1, 2</column>
+<column name="out_V_data_V_blk_n">9, 2, 1, 2</column>
+<column name="out_V_data_V_din">21, 4, 512, 2048</column>
+<column name="out_V_dest_V_blk_n">9, 2, 1, 2</column>
+<column name="out_V_dest_V_din">21, 4, 8, 32</column>
+<column name="out_V_id_V_blk_n">9, 2, 1, 2</column>
+<column name="out_V_id_V_din">21, 4, 8, 32</column>
+<column name="out_V_last_V_blk_n">9, 2, 1, 2</column>
+<column name="out_V_last_V_din">21, 4, 1, 4</column>
+<column name="out_V_user_V_blk_n">9, 2, 1, 2</column>
+<column name="out_V_user_V_din">21, 4, 16, 64</column>
+<column name="real_start">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="Nc_2_reg_481">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="i_reg_248">32, 0, 32, 0</column>
+<column name="icmp_reg_489">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+<column name="tmp_3_reg_495">1, 0, 1, 0</column>
+<column name="tmp_7_reg_514">1, 0, 1, 0</column>
+<column name="tmp_data_V_25_reg_456">512, 0, 512, 0</column>
+<column name="tmp_dest_V_3_reg_466">8, 0, 8, 0</column>
+<column name="tmp_dest_V_fu_206">8, 0, 8, 0</column>
+<column name="tmp_id_V_3_reg_461">8, 0, 8, 0</column>
+<column name="tmp_id_V_fu_210">8, 0, 8, 0</column>
+<column name="tmp_last_V_3_reg_476">1, 0, 1, 0</column>
+<column name="tmp_last_V_fu_198">1, 0, 1, 0</column>
+<column name="tmp_user_V_3_reg_471">16, 0, 16, 0</column>
+<column name="tmp_user_V_fu_202">16, 0, 16, 0</column>
+<column name="val_assign_reg_500">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, AttentionMatmulQuant, return value</column>
+<column name="in_V_data_V1_dout">in, 512, ap_fifo, in_V_data_V1, pointer</column>
+<column name="in_V_data_V1_empty_n">in, 1, ap_fifo, in_V_data_V1, pointer</column>
+<column name="in_V_data_V1_read">out, 1, ap_fifo, in_V_data_V1, pointer</column>
+<column name="in_V_id_V2_dout">in, 8, ap_fifo, in_V_id_V2, pointer</column>
+<column name="in_V_id_V2_empty_n">in, 1, ap_fifo, in_V_id_V2, pointer</column>
+<column name="in_V_id_V2_read">out, 1, ap_fifo, in_V_id_V2, pointer</column>
+<column name="in_V_dest_V3_dout">in, 8, ap_fifo, in_V_dest_V3, pointer</column>
+<column name="in_V_dest_V3_empty_n">in, 1, ap_fifo, in_V_dest_V3, pointer</column>
+<column name="in_V_dest_V3_read">out, 1, ap_fifo, in_V_dest_V3, pointer</column>
+<column name="in_V_user_V4_dout">in, 16, ap_fifo, in_V_user_V4, pointer</column>
+<column name="in_V_user_V4_empty_n">in, 1, ap_fifo, in_V_user_V4, pointer</column>
+<column name="in_V_user_V4_read">out, 1, ap_fifo, in_V_user_V4, pointer</column>
+<column name="in_V_last_V5_dout">in, 1, ap_fifo, in_V_last_V5, pointer</column>
+<column name="in_V_last_V5_empty_n">in, 1, ap_fifo, in_V_last_V5, pointer</column>
+<column name="in_V_last_V5_read">out, 1, ap_fifo, in_V_last_V5, pointer</column>
+<column name="out_V_data_V_din">out, 512, ap_fifo, out_V_data_V, pointer</column>
+<column name="out_V_data_V_full_n">in, 1, ap_fifo, out_V_data_V, pointer</column>
+<column name="out_V_data_V_write">out, 1, ap_fifo, out_V_data_V, pointer</column>
+<column name="out_V_id_V_din">out, 8, ap_fifo, out_V_id_V, pointer</column>
+<column name="out_V_id_V_full_n">in, 1, ap_fifo, out_V_id_V, pointer</column>
+<column name="out_V_id_V_write">out, 1, ap_fifo, out_V_id_V, pointer</column>
+<column name="out_V_dest_V_din">out, 8, ap_fifo, out_V_dest_V, pointer</column>
+<column name="out_V_dest_V_full_n">in, 1, ap_fifo, out_V_dest_V, pointer</column>
+<column name="out_V_dest_V_write">out, 1, ap_fifo, out_V_dest_V, pointer</column>
+<column name="out_V_user_V_din">out, 16, ap_fifo, out_V_user_V, pointer</column>
+<column name="out_V_user_V_full_n">in, 1, ap_fifo, out_V_user_V, pointer</column>
+<column name="out_V_user_V_write">out, 1, ap_fifo, out_V_user_V, pointer</column>
+<column name="out_V_last_V_din">out, 1, ap_fifo, out_V_last_V, pointer</column>
+<column name="out_V_last_V_full_n">in, 1, ap_fifo, out_V_last_V, pointer</column>
+<column name="out_V_last_V_write">out, 1, ap_fifo, out_V_last_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

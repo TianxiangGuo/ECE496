@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="top.hpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/top.hpp"/>
+    <originFiles name="common.hpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/common.hpp"/>
+    <originFiles name="top.cpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/top.cpp"/>
+    <originFiles name="weights.hpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/weights.hpp"/>
+    <originFiles name="modules.hpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/modules.hpp"/>
+    <originFiles name="parameters.hpp" path="/home/andy/Desktop/feb7_kern4/kern_4_pe8/src/parameters.hpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

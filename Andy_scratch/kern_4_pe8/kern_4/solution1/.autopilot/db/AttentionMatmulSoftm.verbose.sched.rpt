@@ -1,0 +1,338 @@
+
+
+================================================================
+== Vivado HLS Report for 'AttentionMatmulSoftm'
+================================================================
+* Date:           Tue Feb  7 00:09:32 2023
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        kern_4
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu19eg-ffvc1760-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     4.371|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+------+-----+------+---------+
+    |   Latency  |  Interval  | Pipeline|
+    | min |  max | min |  max |   Type  |
+    +-----+------+-----+------+---------+
+    |    6|  1029|    6|  1029|   none  |
+    +-----+------+-----+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+------+----------+-----------+-----------+----------+----------+
+        |          |   Latency  | Iteration|  Initiation Interval  |   Trip   |          |
+        | Loop Name| min |  max |  Latency |  achieved |   target  |   Count  | Pipelined|
+        +----------+-----+------+----------+-----------+-----------+----------+----------+
+        |- Loop 1  |    4|  1027|         5|          1|          1| 1 ~ 1024 |    yes   |
+        +----------+-----+------+----------+-----------+-----------+----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 2 3 4 5 6 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	7  / (exitcond_flatten)
+	3  / (!exitcond_flatten)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	2  / true
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.37>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %out_V_last_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str5891, i32 0, i32 0, [1 x i8]* @p_str5892, [1 x i8]* @p_str5893, [1 x i8]* @p_str5894, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str5895, [1 x i8]* @p_str5896)"   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %out_V_user_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str5884, i32 0, i32 0, [1 x i8]* @p_str5885, [1 x i8]* @p_str5886, [1 x i8]* @p_str5887, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str5888, [1 x i8]* @p_str5889)"   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %out_V_dest_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str5877, i32 0, i32 0, [1 x i8]* @p_str5878, [1 x i8]* @p_str5879, [1 x i8]* @p_str5880, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str5881, [1 x i8]* @p_str5882)"   --->   Operation 10 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %out_V_id_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str5870, i32 0, i32 0, [1 x i8]* @p_str5871, [1 x i8]* @p_str5872, [1 x i8]* @p_str5873, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str5874, [1 x i8]* @p_str5875)"   --->   Operation 11 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i512* %out_V_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str5863, i32 0, i32 0, [1 x i8]* @p_str5864, [1 x i8]* @p_str5865, [1 x i8]* @p_str5866, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str5867, [1 x i8]* @p_str5868)"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* %in_V_last_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str347, i32 0, i32 0, [1 x i8]* @p_str348, [1 x i8]* @p_str349, [1 x i8]* @p_str350, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str351, [1 x i8]* @p_str352)"   --->   Operation 13 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i16* %in_V_user_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str340, i32 0, i32 0, [1 x i8]* @p_str341, [1 x i8]* @p_str342, [1 x i8]* @p_str343, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str344, [1 x i8]* @p_str345)"   --->   Operation 14 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %in_V_dest_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str333, i32 0, i32 0, [1 x i8]* @p_str334, [1 x i8]* @p_str335, [1 x i8]* @p_str336, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str337, [1 x i8]* @p_str338)"   --->   Operation 15 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %in_V_id_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str326, i32 0, i32 0, [1 x i8]* @p_str327, [1 x i8]* @p_str328, [1 x i8]* @p_str329, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str330, [1 x i8]* @p_str331)"   --->   Operation 16 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i512* %in_V_data_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str319, i32 0, i32 0, [1 x i8]* @p_str320, [1 x i8]* @p_str321, [1 x i8]* @p_str322, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str323, [1 x i8]* @p_str324)"   --->   Operation 17 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.83ns)   --->   "%empty = call { i512, i8, i8, i16, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i8P.i8P.i16P.i1P(i512* %in_V_data_V, i8* %in_V_id_V, i8* %in_V_dest_V, i16* %in_V_user_V, i1* %in_V_last_V)" [src/modules.hpp:1120]   --->   Operation 18 'read' 'empty' <Predicate = true> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_data_V = extractvalue { i512, i8, i8, i16, i1 } %empty, 0" [src/modules.hpp:1120]   --->   Operation 19 'extractvalue' 'tmp_data_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_id_V = extractvalue { i512, i8, i8, i16, i1 } %empty, 1" [src/modules.hpp:1120]   --->   Operation 20 'extractvalue' 'tmp_id_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_dest_V = extractvalue { i512, i8, i8, i16, i1 } %empty, 2" [src/modules.hpp:1120]   --->   Operation 21 'extractvalue' 'tmp_dest_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_user_V = extractvalue { i512, i8, i8, i16, i1 } %empty, 3" [src/modules.hpp:1120]   --->   Operation 22 'extractvalue' 'tmp_user_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_last_V = extractvalue { i512, i8, i8, i16, i1 } %empty, 4" [src/modules.hpp:1120]   --->   Operation 23 'extractvalue' 'tmp_last_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i8P.i8P.i16P.i1P(i512* %out_V_data_V, i8* %out_V_id_V, i8* %out_V_dest_V, i16* %out_V_user_V, i1* %out_V_last_V, i512 %tmp_data_V, i8 %tmp_id_V, i8 %tmp_dest_V, i16 %tmp_user_V, i1 %tmp_last_V)" [src/modules.hpp:1124]   --->   Operation 24 'write' <Predicate = true> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%tmp_56_cast1 = call i12 @_ssdm_op_PartSelect.i12.i512.i32.i32(i512 %tmp_data_V, i32 36, i32 47)" [src/modules.hpp:1120]   --->   Operation 25 'partselect' 'tmp_56_cast1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%tmp = trunc i512 %tmp_data_V to i16" [src/modules.hpp:1120]   --->   Operation 26 'trunc' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%cast = zext i16 %tmp to i28" [src/modules.hpp:1120]   --->   Operation 27 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%cast2 = zext i12 %tmp_56_cast1 to i28" [src/modules.hpp:1120]   --->   Operation 28 'zext' 'cast2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (2.53ns) (root node of the DSP)   --->   "%bound = mul i28 %cast2, %cast" [src/modules.hpp:1120]   --->   Operation 29 'mul' 'bound' <Predicate = true> <Delay = 2.53> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 2.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 30 [1/1] (0.65ns)   --->   "br label %1" [src/modules.hpp:1126]   --->   Operation 30 'br' <Predicate = true> <Delay = 0.65>
+
+State 2 <SV = 1> <Delay = 2.15>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i28 [ 0, %0 ], [ %indvar_flatten_next, %._crit_edge.15 ]"   --->   Operation 31 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%i_op_assign_1 = phi i12 [ 0, %0 ], [ %j, %._crit_edge.15 ]"   --->   Operation 32 'phi' 'i_op_assign_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.01ns)   --->   "%exitcond_flatten = icmp eq i28 %indvar_flatten, %bound" [src/modules.hpp:1120]   --->   Operation 33 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 1.01> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.97ns)   --->   "%indvar_flatten_next = add i28 %indvar_flatten, 1"   --->   Operation 34 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 0.97> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %18, label %.reset" [src/modules.hpp:1120]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.97ns)   --->   "%exitcond3 = icmp eq i12 %i_op_assign_1, %tmp_56_cast1" [src/modules.hpp:1128]   --->   Operation 36 'icmp' 'exitcond3' <Predicate = (!exitcond_flatten)> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.37ns)   --->   "%i_op_assign_1_mid2 = select i1 %exitcond3, i12 0, i12 %i_op_assign_1" [src/modules.hpp:1128]   --->   Operation 37 'select' 'i_op_assign_1_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.80ns)   --->   "%j = add i12 %i_op_assign_1_mid2, 1" [src/modules.hpp:1128]   --->   Operation 38 'add' 'j' <Predicate = (!exitcond_flatten)> <Delay = 0.80> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 1.83>
+ST_3 : Operation 39 [1/1] (1.83ns)   --->   "%empty_1246 = call { i512, i8, i8, i16, i1 } @_ssdm_op_Read.ap_fifo.volatile.i512P.i8P.i8P.i16P.i1P(i512* %in_V_data_V, i8* %in_V_id_V, i8* %in_V_dest_V, i16* %in_V_user_V, i1* %in_V_last_V)" [src/modules.hpp:1132]   --->   Operation 39 'read' 'empty_1246' <Predicate = (!exitcond_flatten)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%tmp_data_V_4 = extractvalue { i512, i8, i8, i16, i1 } %empty_1246, 0" [src/modules.hpp:1132]   --->   Operation 40 'extractvalue' 'tmp_data_V_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_id_V_1 = extractvalue { i512, i8, i8, i16, i1 } %empty_1246, 1" [src/modules.hpp:1132]   --->   Operation 41 'extractvalue' 'tmp_id_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_dest_V_1 = extractvalue { i512, i8, i8, i16, i1 } %empty_1246, 2" [src/modules.hpp:1132]   --->   Operation 42 'extractvalue' 'tmp_dest_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_user_V_1 = extractvalue { i512, i8, i8, i16, i1 } %empty_1246, 3" [src/modules.hpp:1132]   --->   Operation 43 'extractvalue' 'tmp_user_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%tmp_last_V_1 = extractvalue { i512, i8, i8, i16, i1 } %empty_1246, 4" [src/modules.hpp:1132]   --->   Operation 44 'extractvalue' 'tmp_last_V_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_4 = call i16 @_ssdm_op_BitConcatenate.i16.i12.i4(i12 %i_op_assign_1_mid2, i4 0)" [src/modules.hpp:1136]   --->   Operation 45 'bitconcatenate' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (1.10ns)   --->   "%tmp_5 = icmp ult i16 %tmp_4, %tmp" [src/modules.hpp:1136]   --->   Operation 46 'icmp' 'tmp_5' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.65ns)   --->   "br i1 %tmp_5, label %._crit_edge.0, label %2" [src/modules.hpp:1136]   --->   Operation 47 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_data_V_5 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_4, i32 -2147483648, i32 0, i32 31)" [src/modules.hpp:1137]   --->   Operation 48 'partset' 'tmp_data_V_5' <Predicate = (!exitcond_flatten & !tmp_5)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.65ns)   --->   "br label %._crit_edge.0" [src/modules.hpp:1138]   --->   Operation 49 'br' <Predicate = (!exitcond_flatten & !tmp_5)> <Delay = 0.65>
+ST_3 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_1)   --->   "%i_op_assign_2_s = or i16 %tmp_4, 1" [src/modules.hpp:1136]   --->   Operation 50 'or' 'i_op_assign_2_s' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 51 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_1 = icmp ult i16 %i_op_assign_2_s, %tmp" [src/modules.hpp:1136]   --->   Operation 51 'icmp' 'tmp_113_1' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_2)   --->   "%i_op_assign_2_1 = or i16 %tmp_4, 2" [src/modules.hpp:1136]   --->   Operation 52 'or' 'i_op_assign_2_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_2 = icmp ult i16 %i_op_assign_2_1, %tmp" [src/modules.hpp:1136]   --->   Operation 53 'icmp' 'tmp_113_2' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_3)   --->   "%i_op_assign_2_2 = or i16 %tmp_4, 3" [src/modules.hpp:1136]   --->   Operation 54 'or' 'i_op_assign_2_2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_3 = icmp ult i16 %i_op_assign_2_2, %tmp" [src/modules.hpp:1136]   --->   Operation 55 'icmp' 'tmp_113_3' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_4)   --->   "%i_op_assign_2_3 = or i16 %tmp_4, 4" [src/modules.hpp:1136]   --->   Operation 56 'or' 'i_op_assign_2_3' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_4 = icmp ult i16 %i_op_assign_2_3, %tmp" [src/modules.hpp:1136]   --->   Operation 57 'icmp' 'tmp_113_4' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_5)   --->   "%i_op_assign_2_4 = or i16 %tmp_4, 5" [src/modules.hpp:1136]   --->   Operation 58 'or' 'i_op_assign_2_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_5 = icmp ult i16 %i_op_assign_2_4, %tmp" [src/modules.hpp:1136]   --->   Operation 59 'icmp' 'tmp_113_5' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_6)   --->   "%i_op_assign_2_5 = or i16 %tmp_4, 6" [src/modules.hpp:1136]   --->   Operation 60 'or' 'i_op_assign_2_5' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_6 = icmp ult i16 %i_op_assign_2_5, %tmp" [src/modules.hpp:1136]   --->   Operation 61 'icmp' 'tmp_113_6' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_7)   --->   "%i_op_assign_2_6 = or i16 %tmp_4, 7" [src/modules.hpp:1136]   --->   Operation 62 'or' 'i_op_assign_2_6' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 63 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_7 = icmp ult i16 %i_op_assign_2_6, %tmp" [src/modules.hpp:1136]   --->   Operation 63 'icmp' 'tmp_113_7' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_8)   --->   "%i_op_assign_2_7 = or i16 %tmp_4, 8" [src/modules.hpp:1136]   --->   Operation 64 'or' 'i_op_assign_2_7' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_8 = icmp ult i16 %i_op_assign_2_7, %tmp" [src/modules.hpp:1136]   --->   Operation 65 'icmp' 'tmp_113_8' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_9)   --->   "%i_op_assign_2_8 = or i16 %tmp_4, 9" [src/modules.hpp:1136]   --->   Operation 66 'or' 'i_op_assign_2_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_9 = icmp ult i16 %i_op_assign_2_8, %tmp" [src/modules.hpp:1136]   --->   Operation 67 'icmp' 'tmp_113_9' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_s)   --->   "%i_op_assign_2_9 = or i16 %tmp_4, 10" [src/modules.hpp:1136]   --->   Operation 68 'or' 'i_op_assign_2_9' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_s = icmp ult i16 %i_op_assign_2_9, %tmp" [src/modules.hpp:1136]   --->   Operation 69 'icmp' 'tmp_113_s' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_10)   --->   "%i_op_assign_2_10 = or i16 %tmp_4, 11" [src/modules.hpp:1136]   --->   Operation 70 'or' 'i_op_assign_2_10' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_10 = icmp ult i16 %i_op_assign_2_10, %tmp" [src/modules.hpp:1136]   --->   Operation 71 'icmp' 'tmp_113_10' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_11)   --->   "%i_op_assign_2_11 = or i16 %tmp_4, 12" [src/modules.hpp:1136]   --->   Operation 72 'or' 'i_op_assign_2_11' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_11 = icmp ult i16 %i_op_assign_2_11, %tmp" [src/modules.hpp:1136]   --->   Operation 73 'icmp' 'tmp_113_11' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_12)   --->   "%i_op_assign_2_12 = or i16 %tmp_4, 13" [src/modules.hpp:1136]   --->   Operation 74 'or' 'i_op_assign_2_12' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_12 = icmp ult i16 %i_op_assign_2_12, %tmp" [src/modules.hpp:1136]   --->   Operation 75 'icmp' 'tmp_113_12' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_13)   --->   "%i_op_assign_2_13 = or i16 %tmp_4, 14" [src/modules.hpp:1136]   --->   Operation 76 'or' 'i_op_assign_2_13' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_13 = icmp ult i16 %i_op_assign_2_13, %tmp" [src/modules.hpp:1136]   --->   Operation 77 'icmp' 'tmp_113_13' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node tmp_113_14)   --->   "%i_op_assign_2_14 = or i16 %tmp_4, 15" [src/modules.hpp:1136]   --->   Operation 78 'or' 'i_op_assign_2_14' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (1.10ns) (out node of the LUT)   --->   "%tmp_113_14 = icmp ult i16 %i_op_assign_2_14, %tmp" [src/modules.hpp:1136]   --->   Operation 79 'icmp' 'tmp_113_14' <Predicate = (!exitcond_flatten)> <Delay = 1.10> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.10> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 3.28>
+ST_4 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_data_V_8 = phi i512 [ %tmp_data_V_4, %.reset ], [ %tmp_data_V_5, %2 ]"   --->   Operation 80 'phi' 'tmp_data_V_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 81 [1/1] (0.65ns)   --->   "br i1 %tmp_113_1, label %._crit_edge.1, label %3" [src/modules.hpp:1136]   --->   Operation 81 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_data_V_6 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8, i32 -2147483648, i32 32, i32 63)" [src/modules.hpp:1137]   --->   Operation 82 'partset' 'tmp_data_V_6' <Predicate = (!exitcond_flatten & !tmp_113_1)> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (0.65ns)   --->   "br label %._crit_edge.1" [src/modules.hpp:1138]   --->   Operation 83 'br' <Predicate = (!exitcond_flatten & !tmp_113_1)> <Delay = 0.65>
+ST_4 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_data_V_8_1 = phi i512 [ %tmp_data_V_8, %._crit_edge.0 ], [ %tmp_data_V_6, %3 ]"   --->   Operation 84 'phi' 'tmp_data_V_8_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 85 [1/1] (0.65ns)   --->   "br i1 %tmp_113_2, label %._crit_edge.2, label %4" [src/modules.hpp:1136]   --->   Operation 85 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_data_V_7 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_1, i32 -2147483648, i32 64, i32 95)" [src/modules.hpp:1137]   --->   Operation 86 'partset' 'tmp_data_V_7' <Predicate = (!exitcond_flatten & !tmp_113_2)> <Delay = 0.00>
+ST_4 : Operation 87 [1/1] (0.65ns)   --->   "br label %._crit_edge.2" [src/modules.hpp:1138]   --->   Operation 87 'br' <Predicate = (!exitcond_flatten & !tmp_113_2)> <Delay = 0.65>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_data_V_8_2 = phi i512 [ %tmp_data_V_8_1, %._crit_edge.1 ], [ %tmp_data_V_7, %4 ]"   --->   Operation 88 'phi' 'tmp_data_V_8_2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (0.65ns)   --->   "br i1 %tmp_113_3, label %._crit_edge.3, label %5" [src/modules.hpp:1136]   --->   Operation 89 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_data_V_9 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_2, i32 -2147483648, i32 96, i32 127)" [src/modules.hpp:1137]   --->   Operation 90 'partset' 'tmp_data_V_9' <Predicate = (!exitcond_flatten & !tmp_113_3)> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.65ns)   --->   "br label %._crit_edge.3" [src/modules.hpp:1138]   --->   Operation 91 'br' <Predicate = (!exitcond_flatten & !tmp_113_3)> <Delay = 0.65>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_data_V_8_3 = phi i512 [ %tmp_data_V_8_2, %._crit_edge.2 ], [ %tmp_data_V_9, %5 ]"   --->   Operation 92 'phi' 'tmp_data_V_8_3' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (0.65ns)   --->   "br i1 %tmp_113_4, label %._crit_edge.4, label %6" [src/modules.hpp:1136]   --->   Operation 93 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_data_V_10 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_3, i32 -2147483648, i32 128, i32 159)" [src/modules.hpp:1137]   --->   Operation 94 'partset' 'tmp_data_V_10' <Predicate = (!exitcond_flatten & !tmp_113_4)> <Delay = 0.00>
+ST_4 : Operation 95 [1/1] (0.65ns)   --->   "br label %._crit_edge.4" [src/modules.hpp:1138]   --->   Operation 95 'br' <Predicate = (!exitcond_flatten & !tmp_113_4)> <Delay = 0.65>
+ST_4 : Operation 96 [1/1] (0.00ns)   --->   "%tmp_data_V_8_4 = phi i512 [ %tmp_data_V_8_3, %._crit_edge.3 ], [ %tmp_data_V_10, %6 ]"   --->   Operation 96 'phi' 'tmp_data_V_8_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 97 [1/1] (0.65ns)   --->   "br i1 %tmp_113_5, label %._crit_edge.5, label %7" [src/modules.hpp:1136]   --->   Operation 97 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_data_V_11 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_4, i32 -2147483648, i32 160, i32 191)" [src/modules.hpp:1137]   --->   Operation 98 'partset' 'tmp_data_V_11' <Predicate = (!exitcond_flatten & !tmp_113_5)> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (0.65ns)   --->   "br label %._crit_edge.5" [src/modules.hpp:1138]   --->   Operation 99 'br' <Predicate = (!exitcond_flatten & !tmp_113_5)> <Delay = 0.65>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_data_V_8_5 = phi i512 [ %tmp_data_V_8_4, %._crit_edge.4 ], [ %tmp_data_V_11, %7 ]"   --->   Operation 100 'phi' 'tmp_data_V_8_5' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.65ns)   --->   "br i1 %tmp_113_6, label %._crit_edge.6, label %8" [src/modules.hpp:1136]   --->   Operation 101 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_4 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_data_V_12 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_5, i32 -2147483648, i32 192, i32 223)" [src/modules.hpp:1137]   --->   Operation 102 'partset' 'tmp_data_V_12' <Predicate = (!exitcond_flatten & !tmp_113_6)> <Delay = 0.00>
+ST_4 : Operation 103 [1/1] (0.65ns)   --->   "br label %._crit_edge.6" [src/modules.hpp:1138]   --->   Operation 103 'br' <Predicate = (!exitcond_flatten & !tmp_113_6)> <Delay = 0.65>
+
+State 5 <SV = 4> <Delay = 3.28>
+ST_5 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_data_V_8_6 = phi i512 [ %tmp_data_V_8_5, %._crit_edge.5 ], [ %tmp_data_V_12, %8 ]"   --->   Operation 104 'phi' 'tmp_data_V_8_6' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 105 [1/1] (0.65ns)   --->   "br i1 %tmp_113_7, label %._crit_edge.7, label %9" [src/modules.hpp:1136]   --->   Operation 105 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_data_V_13 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_6, i32 -2147483648, i32 224, i32 255)" [src/modules.hpp:1137]   --->   Operation 106 'partset' 'tmp_data_V_13' <Predicate = (!exitcond_flatten & !tmp_113_7)> <Delay = 0.00>
+ST_5 : Operation 107 [1/1] (0.65ns)   --->   "br label %._crit_edge.7" [src/modules.hpp:1138]   --->   Operation 107 'br' <Predicate = (!exitcond_flatten & !tmp_113_7)> <Delay = 0.65>
+ST_5 : Operation 108 [1/1] (0.00ns)   --->   "%tmp_data_V_8_7 = phi i512 [ %tmp_data_V_8_6, %._crit_edge.6 ], [ %tmp_data_V_13, %9 ]"   --->   Operation 108 'phi' 'tmp_data_V_8_7' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 109 [1/1] (0.65ns)   --->   "br i1 %tmp_113_8, label %._crit_edge.8, label %10" [src/modules.hpp:1136]   --->   Operation 109 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_data_V_14 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_7, i32 -2147483648, i32 256, i32 287)" [src/modules.hpp:1137]   --->   Operation 110 'partset' 'tmp_data_V_14' <Predicate = (!exitcond_flatten & !tmp_113_8)> <Delay = 0.00>
+ST_5 : Operation 111 [1/1] (0.65ns)   --->   "br label %._crit_edge.8" [src/modules.hpp:1138]   --->   Operation 111 'br' <Predicate = (!exitcond_flatten & !tmp_113_8)> <Delay = 0.65>
+ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_data_V_8_8 = phi i512 [ %tmp_data_V_8_7, %._crit_edge.7 ], [ %tmp_data_V_14, %10 ]"   --->   Operation 112 'phi' 'tmp_data_V_8_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 113 [1/1] (0.65ns)   --->   "br i1 %tmp_113_9, label %._crit_edge.9, label %11" [src/modules.hpp:1136]   --->   Operation 113 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 114 [1/1] (0.00ns)   --->   "%tmp_data_V_15 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_8, i32 -2147483648, i32 288, i32 319)" [src/modules.hpp:1137]   --->   Operation 114 'partset' 'tmp_data_V_15' <Predicate = (!exitcond_flatten & !tmp_113_9)> <Delay = 0.00>
+ST_5 : Operation 115 [1/1] (0.65ns)   --->   "br label %._crit_edge.9" [src/modules.hpp:1138]   --->   Operation 115 'br' <Predicate = (!exitcond_flatten & !tmp_113_9)> <Delay = 0.65>
+ST_5 : Operation 116 [1/1] (0.00ns)   --->   "%tmp_data_V_8_9 = phi i512 [ %tmp_data_V_8_8, %._crit_edge.8 ], [ %tmp_data_V_15, %11 ]"   --->   Operation 116 'phi' 'tmp_data_V_8_9' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 117 [1/1] (0.65ns)   --->   "br i1 %tmp_113_s, label %._crit_edge.10, label %12" [src/modules.hpp:1136]   --->   Operation 117 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 118 [1/1] (0.00ns)   --->   "%tmp_data_V_16 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_9, i32 -2147483648, i32 320, i32 351)" [src/modules.hpp:1137]   --->   Operation 118 'partset' 'tmp_data_V_16' <Predicate = (!exitcond_flatten & !tmp_113_s)> <Delay = 0.00>
+ST_5 : Operation 119 [1/1] (0.65ns)   --->   "br label %._crit_edge.10" [src/modules.hpp:1138]   --->   Operation 119 'br' <Predicate = (!exitcond_flatten & !tmp_113_s)> <Delay = 0.65>
+ST_5 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_data_V_8_s = phi i512 [ %tmp_data_V_8_9, %._crit_edge.9 ], [ %tmp_data_V_16, %12 ]"   --->   Operation 120 'phi' 'tmp_data_V_8_s' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 121 [1/1] (0.65ns)   --->   "br i1 %tmp_113_10, label %._crit_edge.11, label %13" [src/modules.hpp:1136]   --->   Operation 121 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_data_V_17 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_s, i32 -2147483648, i32 352, i32 383)" [src/modules.hpp:1137]   --->   Operation 122 'partset' 'tmp_data_V_17' <Predicate = (!exitcond_flatten & !tmp_113_10)> <Delay = 0.00>
+ST_5 : Operation 123 [1/1] (0.65ns)   --->   "br label %._crit_edge.11" [src/modules.hpp:1138]   --->   Operation 123 'br' <Predicate = (!exitcond_flatten & !tmp_113_10)> <Delay = 0.65>
+ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_data_V_8_10 = phi i512 [ %tmp_data_V_8_s, %._crit_edge.10 ], [ %tmp_data_V_17, %13 ]"   --->   Operation 124 'phi' 'tmp_data_V_8_10' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_5 : Operation 125 [1/1] (0.65ns)   --->   "br i1 %tmp_113_11, label %._crit_edge.12, label %14" [src/modules.hpp:1136]   --->   Operation 125 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_5 : Operation 126 [1/1] (0.00ns)   --->   "%tmp_data_V_18 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_10, i32 -2147483648, i32 384, i32 415)" [src/modules.hpp:1137]   --->   Operation 126 'partset' 'tmp_data_V_18' <Predicate = (!exitcond_flatten & !tmp_113_11)> <Delay = 0.00>
+ST_5 : Operation 127 [1/1] (0.65ns)   --->   "br label %._crit_edge.12" [src/modules.hpp:1138]   --->   Operation 127 'br' <Predicate = (!exitcond_flatten & !tmp_113_11)> <Delay = 0.65>
+
+State 6 <SV = 5> <Delay = 3.80>
+ST_6 : Operation 128 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1024, i64 0)"   --->   Operation 128 'speclooptripcount' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str30)" [src/modules.hpp:1128]   --->   Operation 129 'specregionbegin' 'tmp_3' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 130 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [src/modules.hpp:1130]   --->   Operation 130 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 131 [1/1] (0.00ns)   --->   "%tmp_data_V_8_11 = phi i512 [ %tmp_data_V_8_10, %._crit_edge.11 ], [ %tmp_data_V_18, %14 ]"   --->   Operation 131 'phi' 'tmp_data_V_8_11' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 132 [1/1] (0.65ns)   --->   "br i1 %tmp_113_12, label %._crit_edge.13, label %15" [src/modules.hpp:1136]   --->   Operation 132 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_6 : Operation 133 [1/1] (0.00ns)   --->   "%tmp_data_V_19 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_11, i32 -2147483648, i32 416, i32 447)" [src/modules.hpp:1137]   --->   Operation 133 'partset' 'tmp_data_V_19' <Predicate = (!exitcond_flatten & !tmp_113_12)> <Delay = 0.00>
+ST_6 : Operation 134 [1/1] (0.65ns)   --->   "br label %._crit_edge.13" [src/modules.hpp:1138]   --->   Operation 134 'br' <Predicate = (!exitcond_flatten & !tmp_113_12)> <Delay = 0.65>
+ST_6 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_data_V_8_12 = phi i512 [ %tmp_data_V_8_11, %._crit_edge.12 ], [ %tmp_data_V_19, %15 ]"   --->   Operation 135 'phi' 'tmp_data_V_8_12' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 136 [1/1] (0.65ns)   --->   "br i1 %tmp_113_13, label %._crit_edge.14, label %16" [src/modules.hpp:1136]   --->   Operation 136 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_6 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_data_V_20 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_12, i32 -2147483648, i32 448, i32 479)" [src/modules.hpp:1137]   --->   Operation 137 'partset' 'tmp_data_V_20' <Predicate = (!exitcond_flatten & !tmp_113_13)> <Delay = 0.00>
+ST_6 : Operation 138 [1/1] (0.65ns)   --->   "br label %._crit_edge.14" [src/modules.hpp:1138]   --->   Operation 138 'br' <Predicate = (!exitcond_flatten & !tmp_113_13)> <Delay = 0.65>
+ST_6 : Operation 139 [1/1] (0.00ns)   --->   "%tmp_data_V_8_13 = phi i512 [ %tmp_data_V_8_12, %._crit_edge.13 ], [ %tmp_data_V_20, %16 ]"   --->   Operation 139 'phi' 'tmp_data_V_8_13' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 140 [1/1] (0.65ns)   --->   "br i1 %tmp_113_14, label %._crit_edge.15, label %17" [src/modules.hpp:1136]   --->   Operation 140 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.65>
+ST_6 : Operation 141 [1/1] (0.00ns)   --->   "%tmp_data_V_21 = call i512 @llvm.part.set.i512.i32(i512 %tmp_data_V_8_13, i32 -2147483648, i32 480, i32 511)" [src/modules.hpp:1137]   --->   Operation 141 'partset' 'tmp_data_V_21' <Predicate = (!exitcond_flatten & !tmp_113_14)> <Delay = 0.00>
+ST_6 : Operation 142 [1/1] (0.65ns)   --->   "br label %._crit_edge.15" [src/modules.hpp:1138]   --->   Operation 142 'br' <Predicate = (!exitcond_flatten & !tmp_113_14)> <Delay = 0.65>
+ST_6 : Operation 143 [1/1] (0.00ns)   --->   "%tmp_data_V_22 = phi i512 [ %tmp_data_V_8_13, %._crit_edge.14 ], [ %tmp_data_V_21, %17 ]"   --->   Operation 143 'phi' 'tmp_data_V_22' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 144 [1/1] (1.83ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i512P.i8P.i8P.i16P.i1P(i512* %out_V_data_V, i8* %out_V_id_V, i8* %out_V_dest_V, i16* %out_V_user_V, i1* %out_V_last_V, i512 %tmp_data_V_22, i8 %tmp_id_V_1, i8 %tmp_dest_V_1, i16 %tmp_user_V_1, i1 %tmp_last_V_1)" [src/modules.hpp:1141]   --->   Operation 144 'write' <Predicate = (!exitcond_flatten)> <Delay = 1.83> <Core = "FIFO_SRL">   --->   Core 36 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.83> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 512> <Depth = 0> <FIFO>
+ST_6 : Operation 145 [1/1] (0.00ns)   --->   "%empty_1245 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str30, i32 %tmp_3)" [src/modules.hpp:1142]   --->   Operation 145 'specregionend' 'empty_1245' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 146 [1/1] (0.00ns)   --->   "br label %1" [src/modules.hpp:1128]   --->   Operation 146 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 7 <SV = 2> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (0.00ns)   --->   "ret void" [src/modules.hpp:1144]   --->   Operation 147 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 4.37ns
+The critical path consists of the following:
+	fifo read on port 'in_V_data_V' (src/modules.hpp:1120) [21]  (1.84 ns)
+	'mul' operation of DSP[32] ('bound', src/modules.hpp:1120) [32]  (2.53 ns)
+
+ <State 2>: 2.16ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', src/modules.hpp:1128) [36]  (0 ns)
+	'icmp' operation ('exitcond3', src/modules.hpp:1128) [42]  (0.976 ns)
+	'select' operation ('i_op_assign_1_mid2', src/modules.hpp:1128) [43]  (0.375 ns)
+	'add' operation ('j', src/modules.hpp:1128) [182]  (0.809 ns)
+
+ <State 3>: 1.84ns
+The critical path consists of the following:
+	fifo read on port 'in_V_data_V' (src/modules.hpp:1132) [46]  (1.84 ns)
+
+ <State 4>: 3.28ns
+The critical path consists of the following:
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [59]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [67]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [67]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [75]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [75]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [83]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [83]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [91]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [91]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [99]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [99]  (0 ns)
+
+ <State 5>: 3.28ns
+The critical path consists of the following:
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [107]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [115]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [115]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [123]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [123]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [131]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [131]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [139]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [139]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [147]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [147]  (0 ns)
+
+ <State 6>: 3.81ns
+The critical path consists of the following:
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [155]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [163]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [163]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [171]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [171]  (0 ns)
+	multiplexor before 'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [179]  (0.656 ns)
+	'phi' operation ('tmp.data.V') with incoming values : ('tmp.data.V', src/modules.hpp:1132) ('tmp.data.V', src/modules.hpp:1137) [179]  (0 ns)
+	fifo write on port 'out_V_data_V' (src/modules.hpp:1141) [180]  (1.84 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

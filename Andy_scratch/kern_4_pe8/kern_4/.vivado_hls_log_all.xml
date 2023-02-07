@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.829-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.813-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.808-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.765-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.759-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] The II Violation in module 'softmax_read_data': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)&#xA;   between fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713) and fifo write on port 'in_sub_max_V_V' (src/modules.hpp:1713)." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:09:33.750-0500" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'AttentionMatmulCompu.1' to 'AttentionMatmulCompu_1'." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:05:02.736-0500" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'AttentionMatmulCompu.2' to 'AttentionMatmulCompu_2'." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:04:51.315-0500" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'AttentionMatmulCompu.3' to 'AttentionMatmulCompu_3'." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:04:51.309-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulArbiter&lt;config_t_attention_matmul_4>' to 'AttentionMatmulArbit' (src/modules.hpp:19:22)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:04:51.294-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulComputePE&lt;config_t_attention_matmul_4>174' to 'AttentionMatmulCompu.3' (src/modules.hpp:993:5)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.685-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulComputePE&lt;config_t_attention_matmul_4>175' to 'AttentionMatmulCompu.2' (src/modules.hpp:993:5)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.679-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulComputePE&lt;config_t_attention_matmul_4>176' to 'AttentionMatmulCompu.1' (src/modules.hpp:993:5)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.653-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulComputePE&lt;config_t_attention_matmul_4>177' to 'AttentionMatmulCompu' (src/modules.hpp:993:5)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.628-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulQuantizerB&lt;config_t_attention_matmul_4>173' to 'AttentionMatmulQuant' (src/modules.hpp:19:24)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.603-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulReadA&lt;config_t_attention_matmul_4>' to 'AttentionMatmulReadA' (src/modules.hpp:19:6)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.583-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulReadB&lt;config_t_attention_matmul_4>' to 'AttentionMatmulReadB' (src/modules.hpp:19:9)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.577-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulSoftmaxQuantizer&lt;config_t_attention_matmul_4>' to 'AttentionMatmulSoftm' (src/modules.hpp:19:5)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.552-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'AttentionMatmulWrite&lt;config_t_attention_matmul_4>' to 'AttentionMatmulWrite' (src/modules.hpp:1063:76)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.379-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_QuantAct_1_channel&lt;config_t_softmax_4>179' to 'softmax_QuantAct_1_c' (src/modules.hpp:1878:24)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.369-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_divide_precise&lt;config_t_softmax_4>' to 'softmax_divide_preci' (src/modules.hpp:2013:49)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.360-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_process_1&lt;config_t_softmax_4>178' to 'softmax_process_1178' (src/modules.hpp:1812:24)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.353-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_read_data&lt;config_t_softmax_4>' to 'softmax_read_data' (src/modules.hpp:19:64)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.346-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_subtract_max&lt;config_t_softmax_4>' to 'softmax_subtract_max' (src/modules.hpp:1766:50)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.338-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_write_out&lt;config_t_softmax_4>' to 'softmax_write_out' (src/modules.hpp:2056:72)" projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.330-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1' (src/modules.hpp:796:17) in function 'AttentionMatmulArbiter&lt;config_t_attention_matmul_4>' : &#xA;&#xA;&#xA;the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop." projectName="kern_4" solutionName="solution1" date="2023-02-07T00:02:57.317-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'temp.V' (src/modules.hpp:2088) accessed through non-constant indices on dimension 1 (src/modules.hpp:2105:68), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="kern_4" solutionName="solution1" date="2023-02-06T23:55:25.257-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-1.1.2' (src/modules.hpp:1706) because its parent loop or function is pipelined." projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:54.205-0500" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] src/modules.hpp:2111: variable-indexed range selection may cause suboptimal QoR." projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:53.534-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file src/top.cpp" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:50.790-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/top.cpp:13:23" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.084-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:2846:27" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.077-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/modules.hpp:2146:76" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.070-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1583:24" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.063-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1159:24" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.056-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:773:27" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.049-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:696:27" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.043-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:560:24" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.035-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:469:24" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.026-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/modules.hpp:244:2" projectName="kern_4" solutionName="solution1" date="2023-02-06T23:54:41.011-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

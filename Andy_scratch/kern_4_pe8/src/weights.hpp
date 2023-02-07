@@ -1,0 +1,6 @@
+#define SOFTMAX_CONST_4 30
+#define SOFTMAX_X0_4 -490
+#define SOFTMAX_B_4 1912
+#define SOFTMAX_C_4 1393919
+#define SOFTMAX_M_4 1615394284
+#define SOFTMAX_E_4 66
