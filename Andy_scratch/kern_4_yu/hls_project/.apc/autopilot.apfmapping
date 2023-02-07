@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="parameters.hpp" path="/home/andy/Desktop/kern_4_yu/src/parameters.hpp"/>
+    <originFiles name="common.hpp" path="/home/andy/Desktop/kern_4_yu/src/common.hpp"/>
+    <originFiles name="top.cpp" path="/home/andy/Desktop/kern_4_yu/src/top.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>
