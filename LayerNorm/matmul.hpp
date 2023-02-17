@@ -65,23 +65,33 @@ void save_data(
 					sum_val += sum[k];
 				}
 
-				mean = sum_val / config_t::NUM_CHANNEL;
+				if (sum_val.bit(config_t::DATA_WIDTH - 1) == 1)
+				{
+					if ((~(sum_val % config_t::NUM_CHANNEL) + 1) > (config_t::NUM_CHANNEL >> 1))
+					{
+						mean = sum_val / config_t::NUM_CHANNEL - 1;
+					}
+					else
+					{
+						mean = sum_val / config_t::NUM_CHANNEL;
+					}
+				}
+				else
+				{
+					if (sum_val % config_t::NUM_CHANNEL > (config_t::NUM_CHANNEL / 2))
+					{
+						mean = sum_val / config_t::NUM_CHANNEL + 1;
+					}
+					else
+					{
+						mean = sum_val / config_t::NUM_CHANNEL;
+					}
+				}
 				out_mean1.write(mean);
 				out_mean2.write(mean);
+//				cout<<"mean: "<<mean<<endl;
 			}
 		}
-
-//		for (int j=0; j < config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; j++) { // each row
-//			#pragma HLS pipeline ii=1
-//			for (int k=0; k < config_t::UNROLL_FACTOR; k++) {
-//				#pragma HLS unroll
-//				ap_int<config_t::DATA_WIDTH> read = buffer[k + j * config_t::UNROLL_FACTOR];
-//				ap_int<config_t::DATA_WIDTH> read1 = read - mean;
-//
-//				out_1[k].write(read1);
-//				out_2[k].write(read1);
-//			}
-//		}
 	}
 }
 
@@ -109,8 +119,6 @@ void compute_var(
 
 	for (int i=0; i<N; i++) {
 #pragma HLS loop_tripcount min=1 max=512
-//		while(in_mean.empty())	ap_wait_n(1);
-//		cout<<"var mean: "<<mean<<endl;
 		for (int l=0; l<config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; l++) {
 			#pragma HLS pipeline ii=1
 
@@ -143,43 +151,12 @@ void compute_var(
 				}
 
 				out_var.write(var_val);
+//				cout<<"var: "<<var_val<<endl;
 
 			}
 		}
 	}
 }
-
-//template<typename config_t>
-//void get_num_bits(
-//		ap_uint<config_t::DATA_WIDTH> var,
-//		ap_uint<8> &bits)
-//{
-//	// only work for 32 bits
-//	ap_uint<config_t::DATA_WIDTH / 2> temp_16;
-//	ap_uint<config_t::DATA_WIDTH / 4> temp_8;
-//	ap_uint<config_t::DATA_WIDTH / 8> temp_4;
-//	ap_uint<config_t::DATA_WIDTH / 16> temp_2;
-//
-//	// the base
-//	ap_uint<1> base_place_16, base_place_8, base_place_4, base_place_2;
-//
-//
-//	temp_16 = var.range(31, 16) == 0 ? var.range(15, 0) : var.range(31, 16);
-//	base_place_16 = var.range(31, 16) == 0 ? 0 : 1;
-//
-//	temp_8 = temp_16.range(15, 8) == 0 ? temp_16.range(7, 0) : temp_16.range(15, 8);
-//	base_place_8 = temp_16.range(15, 8) == 0 ? 0 : 1;
-//
-//	temp_4 = temp_8.range(7, 4) == 0 ? temp_8.range(3, 0) : temp_8.range(7, 4);
-//	base_place_4 = temp_8.range(7, 4) == 0 ? 0 : 1;
-//
-//	temp_2 = temp_4.range(3, 2) == 0 ? temp_4.range(1, 0) : temp_4.range(3, 2);
-//	base_place_2 = temp_4.range(3, 2) == 0 ? 0 : 1;
-//
-//
-//	bits = 1 + ((ap_uint<8>(base_place_16)<<4) | (ap_uint<8>(base_place_8)<<3) | (ap_uint<8>(base_place_4)<<2) | (ap_uint<8>(base_place_2)<<1) | ap_uint<8>(temp_2[1]));
-//
-//}
 
 
 template<typename config_t>
@@ -200,24 +177,19 @@ void sqrt_alg_based(
 
 	for (int i=0; i<N; i++) {
 #pragma HLS loop_tripcount min=1 max=512
+	//===================================================================
+	//======================= sqrt====================================
+	//===================================================================
 	var = in_var.read();
 	// find number of bits
-//	get_num_bits<config_t>(var, bits);
-//	exp = 32 - bits;
 	x = var;
-
-
 	ap_uint<config_t::DATA_WIDTH> c = 0;
-
-
 	ap_uint<config_t::DATA_WIDTH> d = 1 << 30; // The second-to-top bit is set.
-//	ap_uint<4> count = 0;
 
 	while (d > var){
 		#pragma HLS loop_tripcount min=1 max=16
 		d >>= 2;
 	}
-//	d = d >> exp;
 	while (d != 0) {
 		#pragma HLS loop_tripcount min=1 max=16
 		if (x >= c + d) {
@@ -227,51 +199,47 @@ void sqrt_alg_based(
 		else {
 			c >>= 1;
 		}
-//		count++;
-//		if(count == 5){
-//			c = c >> ((bits >> 1) -5);
-//			break;
-//		}
+
 		d >>= 2;
 	}
-	//cout<<"std: "<<c<<endl;
+//	cout<<"std: "<<c<<endl;
 	//===================================================================
 	//======================= divider====================================
 	//===================================================================
-//	ap_uint<config_t::DATA_WIDTH> result1 = ap_uint<32>(1<<31) / ap_uint<32>(c<<config_t::shift);
-	#define DECIMALS 16
-	ap_int<32> D_p = c;
-//	//cout<<"================="<<result1<<"=========="<<endl;
-//	ap_int<32> shift = 0;
-//	int count =0;
-//	while (D_p.range(31, DECIMALS) != 0) {
-//		shift += 1;
-//		D_p = D_p >> 1;
-//		count++;
+	ap_uint<config_t::DATA_WIDTH> factor = ap_uint<32>(1<<31) / ap_uint<32>(c<<config_t::shift);
+//	int DECIMALS = config_t::shift > 6 ? 15:16;
+//	ap_int<32> D_p = c;
+////	//cout<<"================="<<result1<<"=========="<<endl;
+////	ap_int<32> shift = 0;
+////	int count =0;
+////	while (D_p.range(31, DECIMALS) != 0) {
+////		shift += 1;
+////		D_p = D_p >> 1;
+////		count++;
+////	}
+////	//cout<<shift<<endl;
+//	ap_int<32> x_init = (48 << DECIMALS) / 17 - (32 * D_p)/17;
+//
+//	ap_int<32> read = ap_uint<32>(1<<31);
+//
+////	ap_int<32> N_p = read >> shift;
+//	ap_int<32> N_p = read;
+//	x = x_init;
+//	for (int i = 0; i < 3; i++) {
+//		ap_int<32> b_p_x = (1 << DECIMALS) - ((D_p * x) >> DECIMALS);
+//		x = x + ((x * b_p_x) >> DECIMALS);
 //	}
-//	//cout<<shift<<endl;
-	ap_int<32> x_init = (48 << DECIMALS) / 17 - (32 * D_p)/17;
-
-	ap_int<32> read = ap_uint<32>(1<<31);
-
-//	ap_int<32> N_p = read >> shift;
-	ap_int<32> N_p = read;
-	x = x_init;
-	for (int i = 0; i < 3; i++) {
-		ap_int<32> b_p_x = (1 << DECIMALS) - ((D_p * x) >> DECIMALS);
-		x = x + ((x * b_p_x) >> DECIMALS);
-	}
-	//div = read / sum_val; // TODO: revert back to divide
-	ap_int<64> result = (N_p * x) >> DECIMALS;
-	if (result[DECIMALS-1] == 1) {
-		result = (result >> DECIMALS) + 1;
-	} else {
-		result = result >> DECIMALS;
-	}
-	ap_uint<32> factor= result*(-1) >> 1;
+//	//div = read / sum_val; // TODO: revert back to divide
+//	ap_int<64> result = (N_p * x) >> DECIMALS;
+//	if (result[DECIMALS-1] == 1) {
+//		result = (result >> DECIMALS) + 1;
+//	} else {
+//		result = result >> DECIMALS;
+//	}
+//	ap_uint<32> factor= result*(-1) >> config_t::shift;
 //	//cout<<"================="<<factor<<"=========="<<endl;
 	out_factor.write(factor);
-	//cout<<"factor: "<<factor<<endl;
+//	cout<<"factor: "<<factor<<endl;
 	}
 }
 
@@ -295,10 +263,6 @@ void compute_y(
 #pragma HLS ARRAY_PARTITION variable=y complete dim=0
 #pragma HLS ARRAY_PARTITION variable=y1 complete dim=0
 
-//	ap_uint<config_t::DATA_WIDTH> buffer[config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR][config_t::UNROLL_FACTOR];
-//
-//#pragma HLS ARRAY_PARTITION variable=buffer complete dim=2
-
 	ap_int<config_t::DATA_WIDTH> mean;
 	unsigned int N = in_n.read();
 	out_n.write(N);
@@ -306,14 +270,6 @@ void compute_y(
 	for (int i=0; i<N; i++) {
 #pragma HLS loop_tripcount min=1 max=512
 
-//		for (int j=0; j<config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; j++) {
-//			#pragma HLS pipeline ii=1
-//			for (int k=0; k<config_t::UNROLL_FACTOR; k++) {
-//				#pragma HLS unroll
-//				ap_int<config_t::DATA_WIDTH> read = in[k].read();
-//				buffer[j][k] = read;
-//			}
-//		}
 
 		for (int j=0; j<config_t::NUM_CHANNEL / config_t::UNROLL_FACTOR; j++) {
 			#pragma HLS pipeline ii=1
@@ -326,7 +282,7 @@ void compute_y(
 			for (int k=0; k<config_t::UNROLL_FACTOR; k++) {
 				#pragma HLS unroll
 				ap_int<config_t::DATA_WIDTH> read = in[k].read();
-				y[k] = (read - mean) * (factor >> 1);
+				y[k] = ((read - mean) * factor) >> 1;
 				y1[k] = y[k] + bias[k + j * config_t::UNROLL_FACTOR];
 				out[k].write(y1[k]);
 			}
@@ -413,8 +369,6 @@ void LayerNorm(
 
 #pragma HLS stream variable=in_compute depth=512
 #pragma HLS stream variable=in_compute_y depth=512
-//#pragma HLS stream variable=mean_pipe1 depth=8192
-//#pragma HLS stream variable=mean_pipe2 depth=8192
 
 	//	 save buffer
 	save_data<config_t>(in, n_pipe1, in_compute, in_compute_y, mean_pipe1, mean_pipe2);
@@ -424,7 +378,6 @@ void LayerNorm(
 
 	// square root
 	sqrt_alg_based<config_t>(n_pipe2, n_pipe3, in_sqrt, in_compute_y_factor);
-//	sqrt_tbl_based<config_t>(n_pipe2, n_pipe3, sqrt_table, in_sqrt, in_compute_y_factor);
 
 	// add bias
 	compute_y<config_t>(n_pipe3, n_pipe4, bias, in_compute_y_factor, in_compute_y, in_write, mean_pipe2);
