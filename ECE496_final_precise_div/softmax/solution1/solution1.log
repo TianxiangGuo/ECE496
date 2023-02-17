@@ -1,0 +1,289 @@
+==============================================================
+File generated on Mon Jan 09 18:21:35 -0500 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+WARNING: [HLS 200-40] top.cpp:5:10: fatal error: 'exponents.hpp' file not found
+#include "exponents.hpp"
+         ^
+1 error generated.
+==============================================================
+File generated on Mon Jan 09 18:21:53 -0500 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 103.219 ; gain = 17.969
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 103.219 ; gain = 17.969
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 130.234 ; gain = 44.984
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] top.cpp:396: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 145.012 ; gain = 59.762
+WARNING: [XFORM 203-505] Ignore pipeline pragma in Loop whose tripcount is only 1 (top.cpp:81) in function 'read_data'.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:380) in function 'write' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:145) in function 'subtract_max' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:314) in function 'softmax_divide_precise' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:45) in function 'read_data' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:196) in function 'process_1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (top.cpp:254) in function 'QuantAct_1_channel_mine' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:384) in function 'write' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (top.cpp:394) in function 'write' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:155) in function 'subtract_max' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:323) in function 'softmax_divide_precise' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:59) in function 'read_data' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (top.cpp:78) in function 'read_data' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2.1' (top.cpp:83) in function 'read_data' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (top.cpp:96) in function 'read_data' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.4' (top.cpp:105) in function 'read_data' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:205) in function 'process_1' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (top.cpp:261) in function 'QuantAct_1_channel_mine' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (top.cpp:288) in function 'QuantAct_1_channel_mine' completely with a factor of 16.
+INFO: [XFORM 203-101] Partitioning array 'temp.V' (top.cpp:373) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buffer.V' (top.cpp:32) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_1.V' (top.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_2.V' (top.cpp:30) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'max_3.V' (top.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x.V' (top.cpp:185) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'q.V' (top.cpp:186) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'r.V.2' (top.cpp:187) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'exp.V' (top.cpp:188) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'sum.V' (top.cpp:248) in dimension 1 completely.
+INFO: [XFORM 203-712] Applying dataflow to function 'softmax', detected/extracted 6 process function(s): 
+	 'read_data'
+	 'subtract_max'
+	 'process_1'
+	 'QuantAct_1_channel_mine'
+	 'softmax_divide_precise'
+	 'write'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:380:80) to (top.cpp:392:9) in function 'write'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (top.cpp:377:27) in function 'write'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:154:6) to (top.cpp:145:50) in function 'subtract_max'... converting 49 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:46:16) to (top.cpp:121:4) in function 'read_data'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'QuantAct_1_channel_mine' (top.cpp:243:28)...15 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 180.566 ; gain = 95.316
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:377:29) in function 'write'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:144:20) in function 'subtract_max'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:311:20) in function 'softmax_divide_precise'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:42:20) in function 'read_data'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:194:16) in function 'process_1'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (top.cpp:252:16) in function 'QuantAct_1_channel_mine'.
+WARNING: [XFORM 203-631] Renaming function 'softmax_divide_precise' to 'softmax_divide_preci' (top.cpp:306:49)
+WARNING: [XFORM 203-631] Renaming function 'QuantAct_1_channel_mine' to 'QuantAct_1_channel_m' (top.cpp:243:28)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 243.293 ; gain = 158.043
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'softmax' ...
+WARNING: [SYN 201-103] Legalizing function name 'write' to 'write_r'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.964 seconds; current allocated memory: 196.183 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.102 seconds; current allocated memory: 196.611 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'subtract_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.336 seconds; current allocated memory: 196.976 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.104 seconds; current allocated memory: 197.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'process_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.882 seconds; current allocated memory: 198.886 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.501 seconds; current allocated memory: 200.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'QuantAct_1_channel_m' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.269 seconds; current allocated memory: 202.069 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.263 seconds; current allocated memory: 203.072 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'softmax_divide_preci' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 33.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.576 seconds; current allocated memory: 204.062 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.385 seconds; current allocated memory: 205.425 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'write_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.536 seconds; current allocated memory: 205.891 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.116 seconds; current allocated memory: 206.234 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'softmax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.163 seconds; current allocated memory: 206.395 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.965 seconds; current allocated memory: 207.709 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_data'.
+INFO: [HLS 200-111]  Elapsed time: 0.638 seconds; current allocated memory: 209.349 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'subtract_max' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'subtract_max'.
+INFO: [HLS 200-111]  Elapsed time: 0.373 seconds; current allocated memory: 210.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'process_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'process_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.546 seconds; current allocated memory: 213.992 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'QuantAct_1_channel_m' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'softmax_mul_32ns_64s_95_2_1' to 'softmax_mul_32ns_bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'softmax_mul_32ns_bkb': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'QuantAct_1_channel_m'.
+INFO: [HLS 200-111]  Elapsed time: 1.835 seconds; current allocated memory: 217.294 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'softmax_divide_preci' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'softmax_sdiv_26ns_32ns_32_30_1' to 'softmax_sdiv_26nscud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'softmax_sdiv_26nscud': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'softmax_divide_preci'.
+INFO: [HLS 200-111]  Elapsed time: 0.878 seconds; current allocated memory: 220.456 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'write_r' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'softmax_mul_mul_12ns_16ns_28_1_1' to 'softmax_mul_mul_1dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'softmax_mul_mul_1dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'write_r'.
+INFO: [HLS 200-111]  Elapsed time: 0.817 seconds; current allocated memory: 221.795 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'softmax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/in_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/in_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/in_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/out_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/out_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/out_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'softmax/out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'softmax' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'start_for_subtract_max_U0' to 'start_for_subtraceOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_process_1_U0' to 'start_for_processfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_QuantAct_1_channel_m_U0' to 'start_for_QuantAcg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_softmax_divide_preci_U0' to 'start_for_softmaxhbi' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'softmax'.
+INFO: [HLS 200-111]  Elapsed time: 0.526 seconds; current allocated memory: 223.026 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'softmax_mul_32ns_bkb_MulnS_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'softmax_sdiv_26nscud_div'
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_n_V_V_U(fifo_w96_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_sub_max_r_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_sub_max_c_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'max_input_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_sub_max_V_V_U(fifo_w512_d32_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_1_iter_r_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_1_iter_c_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_1_V_V_U(fifo_w512_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_quant_iter_r_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_quant_iter_c_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_quant_V_V_U(fifo_w1024_d2_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_2_iter_r_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_2_iter_c_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'sum_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_proc_2_V_V_U(fifo_w256_d32_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_iter_c_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_U(fifo_w128_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_subtraceOg_U(start_for_subtraceOg)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_write_U0_U(start_for_write_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_processfYi_U(start_for_processfYi)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_QuantAcg8j_U(start_for_QuantAcg8j)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_softmaxhbi_U(start_for_softmaxhbi)' using Shift Registers.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 299.992 ; gain = 214.742
+INFO: [SYSC 207-301] Generating SystemC RTL for softmax.
+INFO: [VHDL 208-304] Generating VHDL RTL for softmax.
+INFO: [VLOG 209-307] Generating Verilog RTL for softmax.
+INFO: [HLS 200-112] Total elapsed time: 29.449 seconds; peak allocated memory: 223.026 MB.
+==============================================================
+File generated on Mon Jan 09 18:22:37 -0500 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

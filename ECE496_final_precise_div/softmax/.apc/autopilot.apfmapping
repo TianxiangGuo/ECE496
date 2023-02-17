@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="common.hpp" path="C:\Users\Andy\Desktop\ECE496_final_precise_div\common.hpp"/>
+    <originFiles name="parameters.hpp" path="C:\Users\Andy\Desktop\ECE496_final_precise_div\parameters.hpp"/>
+    <originFiles name="top.hpp" path="C:\Users\Andy\Desktop\ECE496_final_precise_div\top.hpp"/>
+    <originFiles name="top.cpp" path="C:\Users\Andy\Desktop\ECE496_final_precise_div\top.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main.cpp" path="C:\Users\Andy\Desktop\ECE496_final_precise_div\main.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

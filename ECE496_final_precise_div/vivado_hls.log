@@ -1,0 +1,208 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Andy' on host 'desktop-ck9c8bm' (Windows NT_amd64 version 6.2) on Mon Jan 09 18:22:37 -0500 2023
+INFO: [HLS 200-10] In directory 'C:/Users/Andy/Desktop/ECE496_final_precise_div'
+INFO: [HLS 200-10] Opening project 'C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vivado/2018.3/msys64/mingw64/bin/g++"
+   Compiling main.cpp_pre.cpp.tb.cpp
+   Compiling top.cpp_pre.cpp.tb.cpp
+   Compiling apatb_softmax.cpp
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Updating worst error for batch 0 Number#0The input number is 4030   The expected value is 242   the actual value is 241
+Updating worst error for batch 12 Number#10The input number is 4999   The expected value is 93   the actual value is 91
+Updating worst error for batch 88 Number#20The input number is 2410   The expected value is 141   the actual value is 138
+The largest error was: 3
+The average error was: 0.0150146
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+C:\Users\Andy\Desktop\ECE496_final_precise_div\softmax\solution1\sim\verilog>set PATH= 
+
+C:\Users\Andy\Desktop\ECE496_final_precise_div\softmax\solution1\sim\verilog>call C:/Xilinx/Vivado/2018.3/bin/xelab xil_defaultlib.apatb_softmax_top glbl -prj softmax.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "C:/Xilinx/Vivado/2018.3/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s softmax  
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2018.3/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_softmax_top glbl -prj softmax.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Xilinx/Vivado/2018.3/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s softmax 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_axi_s_in_r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_in_r
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_axi_s_out_r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_out_r
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w1024_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w1024_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w128_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w128_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w128_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w256_d32_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w256_d32_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w32_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w512_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w512_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w512_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w512_d32_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w512_d32_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/fifo_w96_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w96_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w96_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/process_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module process_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/QuantAct_1_channel_m.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QuantAct_1_channel_m
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/read_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module read_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_softmax_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module softmax
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax_divide_preci.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module softmax_divide_preci
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax_mul_32ns_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module softmax_mul_32ns_bkb_MulnS_0
+INFO: [VRFC 10-311] analyzing module softmax_mul_32ns_bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax_mul_mul_1dEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module softmax_mul_mul_1dEe_DSP48_0
+INFO: [VRFC 10-311] analyzing module softmax_mul_mul_1dEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax_sdiv_26nscud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module softmax_sdiv_26nscud_div_u
+INFO: [VRFC 10-311] analyzing module softmax_sdiv_26nscud_div
+INFO: [VRFC 10-311] analyzing module softmax_sdiv_26nscud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/start_for_processfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_processfYi_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_processfYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/start_for_QuantAcg8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_QuantAcg8j_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_QuantAcg8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/start_for_softmaxhbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_softmaxhbi_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_softmaxhbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/start_for_subtraceOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_subtraceOg_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_subtraceOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/start_for_write_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_write_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_write_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/subtract_max.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module subtract_max
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/write_r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module write_r
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.read_data
+Compiling module xil_defaultlib.subtract_max
+Compiling module xil_defaultlib.process_1
+Compiling module xil_defaultlib.softmax_mul_32ns_bkb_MulnS_0
+Compiling module xil_defaultlib.softmax_mul_32ns_bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.QuantAct_1_channel_m
+Compiling module xil_defaultlib.softmax_sdiv_26nscud_div_u(in0_W...
+Compiling module xil_defaultlib.softmax_sdiv_26nscud_div(in0_WID...
+Compiling module xil_defaultlib.softmax_sdiv_26nscud(ID=1,NUM_ST...
+Compiling module xil_defaultlib.softmax_divide_preci
+Compiling module xil_defaultlib.softmax_mul_mul_1dEe_DSP48_0
+Compiling module xil_defaultlib.softmax_mul_mul_1dEe(ID=1,NUM_ST...
+Compiling module xil_defaultlib.write_r
+Compiling module xil_defaultlib.fifo_w96_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w96_d2_A
+Compiling module xil_defaultlib.fifo_w32_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w32_d2_A
+Compiling module xil_defaultlib.fifo_w512_d32_A
+Compiling module xil_defaultlib.fifo_w512_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w512_d2_A
+Compiling module xil_defaultlib.fifo_w1024_d2_A
+Compiling module xil_defaultlib.fifo_w256_d32_A
+Compiling module xil_defaultlib.fifo_w128_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w128_d2_A
+Compiling module xil_defaultlib.start_for_subtraceOg_shiftReg
+Compiling module xil_defaultlib.start_for_subtraceOg
+Compiling module xil_defaultlib.start_for_write_U0_shiftReg
+Compiling module xil_defaultlib.start_for_write_U0
+Compiling module xil_defaultlib.start_for_processfYi_shiftReg
+Compiling module xil_defaultlib.start_for_processfYi
+Compiling module xil_defaultlib.start_for_QuantAcg8j_shiftReg
+Compiling module xil_defaultlib.start_for_QuantAcg8j
+Compiling module xil_defaultlib.start_for_softmaxhbi_shiftReg
+Compiling module xil_defaultlib.start_for_softmaxhbi
+Compiling module xil_defaultlib.softmax
+Compiling module xil_defaultlib.fifo(DEPTH=2049,WIDTH=512)
+Compiling module xil_defaultlib.fifo(DEPTH=2049)
+Compiling module xil_defaultlib.fifo(DEPTH=2049,WIDTH=16)
+Compiling module xil_defaultlib.fifo(DEPTH=2049,WIDTH=1)
+Compiling module xil_defaultlib.AESL_axi_s_in_r
+Compiling module xil_defaultlib.fifo(DEPTH=513,WIDTH=512)
+Compiling module xil_defaultlib.fifo(DEPTH=513)
+Compiling module xil_defaultlib.fifo(DEPTH=513,WIDTH=16)
+Compiling module xil_defaultlib.fifo(DEPTH=513,WIDTH=1)
+Compiling module xil_defaultlib.AESL_axi_s_out_r
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_1
+Compiling module xil_defaultlib.apatb_softmax_top
+Compiling module work.glbl
+Built simulation snapshot softmax
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/xsim.dir/softmax/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jan  9 18:23:34 2023...
+
+****** xsim v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/softmax/xsim_script.tcl
+# xsim {softmax} -autoloadwcfg -tclbatch {softmax.tcl}
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source softmax.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "113000"
+// RTL Simulation : 1 / 1 [n/a] @ "10693000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 10712500 ps : File "C:/Users/Andy/Desktop/ECE496_final_precise_div/softmax/solution1/sim/verilog/softmax.autotb.v" Line 284
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Jan  9 18:23:39 2023...
+INFO: [COSIM 212-316] Starting C post checking ...
+Updating worst error for batch 0 Number#0The input number is 4030   The expected value is 242   the actual value is 241
+Updating worst error for batch 12 Number#10The input number is 4999   The expected value is 93   the actual value is 91
+Updating worst error for batch 88 Number#20The input number is 2410   The expected value is 141   the actual value is 138
+The largest error was: 3
+The average error was: 0.0150146
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

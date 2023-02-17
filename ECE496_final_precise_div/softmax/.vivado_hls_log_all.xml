@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'write' to 'write_r'." projectName="softmax" solutionName="solution1" date="2023-01-09T18:22:06.450-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'QuantAct_1_channel_mine' to 'QuantAct_1_channel_m' (top.cpp:243:28)" projectName="softmax" solutionName="solution1" date="2023-01-09T18:22:06.418-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'softmax_divide_precise' to 'softmax_divide_preci' (top.cpp:306:49)" projectName="softmax" solutionName="solution1" date="2023-01-09T18:22:05.289-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Ignore pipeline pragma in Loop whose tripcount is only 1 (top.cpp:81) in function 'read_data'." projectName="softmax" solutionName="solution1" date="2023-01-09T18:22:02.913-0500" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] top.cpp:396: variable-indexed range selection may cause suboptimal QoR." projectName="softmax" solutionName="solution1" date="2023-01-09T18:22:02.644-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
