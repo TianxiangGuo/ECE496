@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'LayerNorm'" level="0">
+<item name = "Date">Mon Feb 20 12:10:38 2023
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">layernorm_kern29</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu19eg-ffvc1760-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 4.366, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">190, 35940, 97, 35842, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_layernorm_save_data_fu_1182">layernorm_save_data, 96, 24624, 96, 24624, none</column>
+<column name="grp_layernorm_compute_va_fu_1266">layernorm_compute_va, 53, 24581, 53, 24581, none</column>
+<column name="grp_layernorm_compute_y_fu_1310">layernorm_compute_y, 53, 24581, 53, 24581, none</column>
+<column name="grp_layernorm_sqrt_alg_b_fu_1388">layernorm_sqrt_alg_b, 41, 35841, 41, 35841, none</column>
+<column name="grp_layernorm_write_fu_1400">layernorm_write, 50, 24578, 50, 24578, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

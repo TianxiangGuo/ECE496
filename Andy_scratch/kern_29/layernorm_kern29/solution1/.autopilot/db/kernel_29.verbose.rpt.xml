@@ -1,0 +1,159 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'kernel_29'" level="0">
+<item name = "Date">Mon Feb 20 12:11:14 2023
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">layernorm_kern29</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu19eg-ffvc1760-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 4.366, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="LayerNorm_U0">LayerNorm, 190, 35940, 97, 35842, dataflow</column>
+<column name="IdentityQuantAct146_U0">IdentityQuantAct146, 53, 24581, 53, 24581, none</column>
+<column name="QuantAct_U0">QuantAct, 53, 24581, 53, 24581, none</column>
+<column name="LayernormBcast_U0">LayernormBcast, ?, ?, ?, ?, none</column>
+<column name="IdentityAdd_U0">IdentityAdd, ?, ?, ?, ?, none</column>
+<column name="IdentityGather_U0">IdentityGather, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">174, -, 3252, 3564, -</column>
+<column name="Instance">127, 202, 29812, 50210, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">1968, 1968, 1045440, 522720, 128</specialColumn>
+<specialColumn name="Utilization (%)">15, 10, 3, 10, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="IdentityAdd_U0">IdentityAdd, 0, 0, 602, 1036</column>
+<column name="IdentityGather_U0">IdentityGather, 0, 0, 1757, 661</column>
+<column name="IdentityQuantAct146_U0">IdentityQuantAct146, 0, 32, 7065, 11519</column>
+<column name="LayerNorm_U0">LayerNorm, 82, 106, 15193, 17635</column>
+<column name="LayernormBcast_U0">LayernormBcast, 29, 0, 1852, 1181</column>
+<column name="QuantAct_U0">QuantAct, 16, 64, 3343, 18178</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="pipe_1_0_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_1_0_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_1_0_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_1_0_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_1_0_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+<column name="pipe_1_1_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_1_1_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_1_1_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_1_1_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_1_1_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+<column name="pipe_2_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_2_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_2_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_2_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_2_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+<column name="pipe_3_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_3_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_3_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_3_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_3_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+<column name="pipe_4_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_4_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_4_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_4_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_4_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+<column name="pipe_5_V_data_V_U">29, 522, 510, 2, 512, 1024</column>
+<column name="pipe_5_V_dest_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_5_V_id_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="pipe_5_V_last_V_U">0, 5, 16, 2, 1, 2</column>
+<column name="pipe_5_V_user_V_U">0, 5, 28, 2, 16, 32</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="IdentityGather_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="in_r_TDATA">in, 512, axis, in_V_data_V, pointer</column>
+<column name="in_r_TID">in, 8, axis, in_V_id_V, pointer</column>
+<column name="in_r_TDEST">in, 8, axis, in_V_dest_V, pointer</column>
+<column name="in_r_TUSER">in, 16, axis, in_V_user_V, pointer</column>
+<column name="in_r_TLAST">in, 1, axis, in_V_last_V, pointer</column>
+<column name="in_r_TVALID">in, 1, axis, in_V_last_V, pointer</column>
+<column name="in_r_TREADY">out, 1, axis, in_V_last_V, pointer</column>
+<column name="out_r_TDATA">out, 512, axis, out_V_data_V, pointer</column>
+<column name="out_r_TID">out, 8, axis, out_V_id_V, pointer</column>
+<column name="out_r_TDEST">out, 8, axis, out_V_dest_V, pointer</column>
+<column name="out_r_TUSER">out, 16, axis, out_V_user_V, pointer</column>
+<column name="out_r_TLAST">out, 1, axis, out_V_last_V, pointer</column>
+<column name="out_r_TVALID">out, 1, axis, out_V_last_V, pointer</column>
+<column name="out_r_TREADY">in, 1, axis, out_V_last_V, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, kernel_29, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, kernel_29, return value</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,936 @@
+==============================================================
+File generated on Mon Feb 20 11:50:09 EST 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/top.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/modules.hpp:244:2
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:469:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:560:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:696:27
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:773:27
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1159:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1583:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:2032:28
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/modules.hpp:2655:52
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/top.cpp:14:23
+WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file src/top.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 433.828 ; gain = 0.125 ; free physical = 19736 ; free virtual = 97910
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 433.828 ; gain = 0.125 ; free physical = 19735 ; free virtual = 97910
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.2' (src/modules.hpp:2620) in function 'void layernorm_write<config_t_layernorm_29>(hls::stream<ap_int<32> >&, hls::stream<ap_uint<FORWARD_REFERENCE::DATA_WIDTH> >*, hls::stream<dataword>&)' completely with a factor of 1.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 562.395 ; gain = 128.691 ; free physical = 19630 ; free virtual = 97809
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] src/modules.hpp:2616: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 562.395 ; gain = 128.691 ; free physical = 19626 ; free virtual = 97805
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2191) in function 'QuantAct<config_t_act_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2609) in function 'layernorm_write<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2566) in function 'layernorm_compute_y<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2450) in function 'layernorm_compute_var<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2364) in function 'layernorm_save_data<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2803) in function 'IdentityAdd<config_t_identity_add_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1.1' (src/modules.hpp:2105) in function 'IdentityQuantAct<config_t_identity_act_29>' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2195) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2200) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2205) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.4' (src/modules.hpp:2214) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2611) in function 'layernorm_write<config_t_layernorm_29>' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (src/modules.hpp:2614) in function 'layernorm_write<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2574) in function 'layernorm_compute_y<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2455) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2463) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2469) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.4' (src/modules.hpp:2476) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2371) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2380) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2392) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2808) in function 'IdentityAdd<config_t_identity_add_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (src/modules.hpp:2112) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.2' (src/modules.hpp:2118) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.3' (src/modules.hpp:2123) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.4' (src/modules.hpp:2128) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.5' (src/modules.hpp:2137) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [XFORM 203-102] Partitioning array 'temp.V' (src/modules.hpp:2605) automatically.
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_write.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_compute_y.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_compute.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.data.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.id.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.dest.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.user.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.last.V' (src/top.cpp:13) .
+INFO: [XFORM 203-101] Partitioning array 'm'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'e'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data.V' (src/modules.hpp:2167) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data1.V' (src/modules.hpp:2168) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data2.V' (src/modules.hpp:2169) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y.V' (src/modules.hpp:2552) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y1.V' (src/modules.hpp:2553) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y.V' (src/modules.hpp:2437) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'var.V' (src/modules.hpp:2438) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'sum.V' (src/modules.hpp:2355) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'identity_m'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'identity_e'  in dimension 2 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'temp_data.V' (src/modules.hpp:2079) accessed through non-constant indices on dimension 1 (src/modules.hpp:2120:2), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'temp_data.V' (src/modules.hpp:2079) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data.V' (src/modules.hpp:2080) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data1.V' (src/modules.hpp:2081) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data2.V' (src/modules.hpp:2082) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_write.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_compute_y.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_compute.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.data.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.id.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.dest.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.user.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.last.V' (src/top.cpp:13) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'identity_m'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2125:16), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+WARNING: [XFORM 203-104] Completely partitioning array 'identity_e'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2130:22), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-712] Applying dataflow to function 'LayerNorm<config_t_layernorm_29>', detected/extracted 5 process function(s): 
+	 'layernorm_save_data<config_t_layernorm_29>'
+	 'layernorm_compute_var<config_t_layernorm_29>'
+	 'layernorm_sqrt_alg_based<config_t_layernorm_29>'
+	 'layernorm_compute_y<config_t_layernorm_29>'
+	 'layernorm_write<config_t_layernorm_29>'.
+INFO: [XFORM 203-712] Applying dataflow to function 'kernel_29', detected/extracted 6 process function(s): 
+	 'IdentityGather<config_t_identity_gather_29>'
+	 'IdentityQuantAct<config_t_identity_act_29>146'
+	 'IdentityAdd<config_t_identity_add_29>'
+	 'LayerNorm<config_t_layernorm_29>'
+	 'QuantAct<config_t_act_29>'
+	 'LayernormBcast<config_t_layernorm_bcast_29>'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2520:18) to (src/modules.hpp:2531:2) in function 'layernorm_sqrt_alg_based<config_t_layernorm_29>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2191:67) to (src/modules.hpp:2224:4) in function 'QuantAct<config_t_act_29>'... converting 49 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2701:5) to (src/modules.hpp:2707:4) in function 'LayernormBcast<config_t_layernorm_bcast_29>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2120:2) to (src/modules.hpp:2105:69) in function 'IdentityQuantAct<config_t_identity_act_29>146'... converting 177 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'layernorm_save_data<config_t_layernorm_29>' (src/modules.hpp:2342)...63 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'layernorm_compute_var<config_t_layernorm_29>' (src/modules.hpp:2445:67)...31 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 625.703 ; gain = 192.000 ; free physical = 21248 ; free virtual = 99423
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2607:14) in function 'layernorm_write<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2362:14) in function 'layernorm_save_data<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2562:14) in function 'layernorm_compute_y<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2448:14) in function 'layernorm_compute_var<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2189:14) in function 'QuantAct<config_t_act_29>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (src/modules.hpp:2697:18) in function 'LayernormBcast<config_t_layernorm_bcast_29>' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2696:14) in function 'LayernormBcast<config_t_layernorm_bcast_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (src/modules.hpp:2104:14) in function 'IdentityQuantAct<config_t_identity_act_29>146'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2102:14) in function 'IdentityQuantAct<config_t_identity_act_29>146'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2802:14) in function 'IdentityAdd<config_t_identity_add_29>'.
+WARNING: [XFORM 203-631] Renaming function 'layernorm_write<config_t_layernorm_29>' to 'layernorm_write' (src/modules.hpp:2593:63)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_sqrt_alg_based<config_t_layernorm_29>' to 'layernorm_sqrt_alg_b' (src/modules.hpp:2497:2)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_save_data<config_t_layernorm_29>' to 'layernorm_save_data' (src/modules.hpp:19:6)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_y<config_t_layernorm_29>' to 'layernorm_compute_y' (src/modules.hpp:2559:67)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_var<config_t_layernorm_29>' to 'layernorm_compute_va' (src/modules.hpp:2445:67)
+WARNING: [XFORM 203-631] Renaming function 'QuantAct<config_t_act_29>' to 'QuantAct' (src/modules.hpp:19:61)
+WARNING: [XFORM 203-631] Renaming function 'LayernormBcast<config_t_layernorm_bcast_29>' to 'LayernormBcast' (src/modules.hpp:19:6)
+WARNING: [XFORM 203-631] Renaming function 'LayerNorm<config_t_layernorm_29>' to 'LayerNorm' (src/modules.hpp:2647:1)
+WARNING: [XFORM 203-631] Renaming function 'IdentityQuantAct<config_t_identity_act_29>146' to 'IdentityQuantAct146' (src/modules.hpp:19:69)
+WARNING: [XFORM 203-631] Renaming function 'IdentityGather<config_t_identity_gather_29>' to 'IdentityGather' (src/modules.hpp:19:152)
+WARNING: [XFORM 203-631] Renaming function 'IdentityAdd<config_t_identity_add_29>' to 'IdentityAdd' (src/modules.hpp:19:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 633.703 ; gain = 200.000 ; free physical = 21362 ; free virtual = 99538
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'kernel_29' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityGather' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 43.02 seconds; current allocated memory: 242.763 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 243.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityQuantAct146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.36 seconds; current allocated memory: 247.071 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.87 seconds; current allocated memory: 253.233 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.79 seconds; current allocated memory: 254.133 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 254.707 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_save_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 48.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.48 seconds; current allocated memory: 255.682 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.77 seconds; current allocated memory: 257.369 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_compute_va' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.59 seconds; current allocated memory: 258.071 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 259.141 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_sqrt_alg_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 259.455 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 259.758 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_compute_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.41 seconds; current allocated memory: 260.529 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 261.783 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 262.085 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 262.540 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 262.781 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.11 seconds; current allocated memory: 264.384 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'QuantAct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.31 seconds; current allocated memory: 265.902 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.76 seconds; current allocated memory: 267.728 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayernormBcast' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 268.175 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 268.595 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kernel_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 268.968 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 5.33 seconds; current allocated memory: 272.716 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityGather' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityGather'.
+INFO: [HLS 200-111]  Elapsed time: 2.97 seconds; current allocated memory: 274.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityQuantAct146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_31_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_5_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_8_1_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_646_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityQuantAct146'.
+INFO: [HLS 200-111]  Elapsed time: 0.88 seconds; current allocated memory: 286.010 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityAdd'.
+INFO: [HLS 200-111]  Elapsed time: 6.91 seconds; current allocated memory: 309.369 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_save_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_srem_41s_11ns_33_45_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_save_data'.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 313.900 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_compute_va' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_compute_va'.
+INFO: [HLS 200-111]  Elapsed time: 1.8 seconds; current allocated memory: 320.386 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_sqrt_alg_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_udiv_32s_32ns_32_36_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_sqrt_alg_b'.
+INFO: [HLS 200-111]  Elapsed time: 1.3 seconds; current allocated memory: 324.628 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_compute_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_compute_y'.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 327.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_write'.
+INFO: [HLS 200-111]  Elapsed time: 1.39 seconds; current allocated memory: 331.612 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayerNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 334.971 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'QuantAct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'QuantAct'.
+INFO: [HLS 200-111]  Elapsed time: 2.52 seconds; current allocated memory: 339.301 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayernormBcast' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayernormBcast'.
+INFO: [HLS 200-111]  Elapsed time: 2.49 seconds; current allocated memory: 347.152 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'kernel_29' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_29'.
+INFO: [HLS 200-111]  Elapsed time: 0.92 seconds; current allocated memory: 350.114 MB.
+INFO: [RTMG 210-279] Implementing memory 'IdentityQuantAct146_identity_m_48_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IdentityQuantAct146_identity_e_48_rom' using distributed ROMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'kernel_29_srem_41s_11ns_33_45_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'kernel_29_udiv_32s_32ns_32_36_seq_1_div'
+INFO: [RTMG 210-279] Implementing memory 'layernorm_compute_y_bias_rom' using block ROMs.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe1_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mean_pipe1_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mean_pipe2_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_0_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_0_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_1_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_1_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_2_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_2_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_3_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_3_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_4_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_4_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_5_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_5_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_6_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_6_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_7_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_7_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_8_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_8_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_9_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_9_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_10_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_10_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_11_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_11_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_12_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_12_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_13_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_13_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_14_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_14_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_15_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_15_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe2_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_sqrt_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe3_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_factor_s_0_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe4_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_0_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_1_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_2_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_3_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_4_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_5_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_6_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_7_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_8_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_9_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_10_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_11_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_12_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_13_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_14_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_15_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_compute_va_U0_U(start_for_layernorm_compute_va_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_compute_y_U0_U(start_for_layernorm_compute_y_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_sqrt_alg_b_U0_U(start_for_layernorm_sqrt_alg_b_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_write_U0_U(start_for_layernorm_write_U0)' using Shift Registers.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_10_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_11_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_12_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_13_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_14_rom' using auto ROMs.
+==============================================================
+File generated on Mon Feb 20 11:56:05 EST 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+File generated on Mon Feb 20 12:09:40 EST 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xczu19eg-ffvc1760-2-i'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/top.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/modules.hpp:244:2
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:469:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:560:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:696:27
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:773:27
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1159:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1583:24
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:2032:28
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/modules.hpp:2655:52
+WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/top.cpp:14:23
+WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file src/top.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 433.832 ; gain = 0.125 ; free physical = 12032 ; free virtual = 96946
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 433.832 ; gain = 0.125 ; free physical = 12032 ; free virtual = 96946
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.2' (src/modules.hpp:2620) in function 'void layernorm_write<config_t_layernorm_29>(hls::stream<ap_int<32> >&, hls::stream<ap_uint<FORWARD_REFERENCE::DATA_WIDTH> >*, hls::stream<dataword>&)' completely with a factor of 1.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 562.398 ; gain = 128.691 ; free physical = 11983 ; free virtual = 96902
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] src/modules.hpp:2616: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 562.398 ; gain = 128.691 ; free physical = 11982 ; free virtual = 96901
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2191) in function 'QuantAct<config_t_act_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2609) in function 'layernorm_write<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2566) in function 'layernorm_compute_y<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2450) in function 'layernorm_compute_var<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2364) in function 'layernorm_save_data<config_t_layernorm_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1' (src/modules.hpp:2803) in function 'IdentityAdd<config_t_identity_add_29>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1.1' (src/modules.hpp:2105) in function 'IdentityQuantAct<config_t_identity_act_29>' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2195) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2200) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2205) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.4' (src/modules.hpp:2214) in function 'QuantAct<config_t_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2611) in function 'layernorm_write<config_t_layernorm_29>' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (src/modules.hpp:2614) in function 'layernorm_write<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2574) in function 'layernorm_compute_y<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2455) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2463) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2469) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.4' (src/modules.hpp:2476) in function 'layernorm_compute_var<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2371) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.2' (src/modules.hpp:2380) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.3' (src/modules.hpp:2392) in function 'layernorm_save_data<config_t_layernorm_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (src/modules.hpp:2808) in function 'IdentityAdd<config_t_identity_add_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (src/modules.hpp:2112) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.2' (src/modules.hpp:2118) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.3' (src/modules.hpp:2123) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.4' (src/modules.hpp:2128) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.5' (src/modules.hpp:2137) in function 'IdentityQuantAct<config_t_identity_act_29>' completely with a factor of 16.
+INFO: [XFORM 203-102] Partitioning array 'temp.V' (src/modules.hpp:2605) automatically.
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_write.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_compute_y.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'in_compute.V.V' .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.data.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.id.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.dest.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.user.V' (src/top.cpp:13) .
+INFO: [XFORM 203-102] Automatically partitioning streamed array 'pipe_1.V.last.V' (src/top.cpp:13) .
+INFO: [XFORM 203-101] Partitioning array 'm'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'e'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data.V' (src/modules.hpp:2167) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data1.V' (src/modules.hpp:2168) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data2.V' (src/modules.hpp:2169) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y.V' (src/modules.hpp:2552) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y1.V' (src/modules.hpp:2553) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y.V' (src/modules.hpp:2437) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'var.V' (src/modules.hpp:2438) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'sum.V' (src/modules.hpp:2355) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'identity_m'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'identity_e'  in dimension 2 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'temp_data.V' (src/modules.hpp:2079) accessed through non-constant indices on dimension 1 (src/modules.hpp:2120:2), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'temp_data.V' (src/modules.hpp:2079) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data.V' (src/modules.hpp:2080) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data1.V' (src/modules.hpp:2081) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_data2.V' (src/modules.hpp:2082) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_write.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_compute_y.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'in_compute.V.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.data.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.id.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.dest.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.user.V' (src/top.cpp:13) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pipe_1.V.last.V' (src/top.cpp:13) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'identity_m'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2125:16), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+WARNING: [XFORM 203-104] Completely partitioning array 'identity_e'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2130:22), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-712] Applying dataflow to function 'LayerNorm<config_t_layernorm_29>', detected/extracted 5 process function(s): 
+	 'layernorm_save_data<config_t_layernorm_29>'
+	 'layernorm_compute_var<config_t_layernorm_29>'
+	 'layernorm_sqrt_alg_based<config_t_layernorm_29>'
+	 'layernorm_compute_y<config_t_layernorm_29>'
+	 'layernorm_write<config_t_layernorm_29>'.
+INFO: [XFORM 203-712] Applying dataflow to function 'kernel_29', detected/extracted 6 process function(s): 
+	 'IdentityGather<config_t_identity_gather_29>'
+	 'IdentityQuantAct<config_t_identity_act_29>146'
+	 'IdentityAdd<config_t_identity_add_29>'
+	 'LayerNorm<config_t_layernorm_29>'
+	 'QuantAct<config_t_act_29>'
+	 'LayernormBcast<config_t_layernorm_bcast_29>'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2520:18) to (src/modules.hpp:2531:2) in function 'layernorm_sqrt_alg_based<config_t_layernorm_29>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2191:67) to (src/modules.hpp:2224:4) in function 'QuantAct<config_t_act_29>'... converting 49 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2701:5) to (src/modules.hpp:2707:4) in function 'LayernormBcast<config_t_layernorm_bcast_29>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/modules.hpp:2120:2) to (src/modules.hpp:2105:69) in function 'IdentityQuantAct<config_t_identity_act_29>146'... converting 177 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'layernorm_save_data<config_t_layernorm_29>' (src/modules.hpp:2342)...63 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'layernorm_compute_var<config_t_layernorm_29>' (src/modules.hpp:2445:67)...31 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 625.707 ; gain = 192.000 ; free physical = 11946 ; free virtual = 96871
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2607:14) in function 'layernorm_write<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2362:14) in function 'layernorm_save_data<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2562:14) in function 'layernorm_compute_y<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2448:14) in function 'layernorm_compute_var<config_t_layernorm_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2189:14) in function 'QuantAct<config_t_act_29>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (src/modules.hpp:2697:18) in function 'LayernormBcast<config_t_layernorm_bcast_29>' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2696:14) in function 'LayernormBcast<config_t_layernorm_bcast_29>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (src/modules.hpp:2104:14) in function 'IdentityQuantAct<config_t_identity_act_29>146'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2102:14) in function 'IdentityQuantAct<config_t_identity_act_29>146'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (src/modules.hpp:2802:14) in function 'IdentityAdd<config_t_identity_add_29>'.
+WARNING: [XFORM 203-631] Renaming function 'layernorm_write<config_t_layernorm_29>' to 'layernorm_write' (src/modules.hpp:2593:63)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_sqrt_alg_based<config_t_layernorm_29>' to 'layernorm_sqrt_alg_b' (src/modules.hpp:2497:2)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_save_data<config_t_layernorm_29>' to 'layernorm_save_data' (src/modules.hpp:19:6)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_y<config_t_layernorm_29>' to 'layernorm_compute_y' (src/modules.hpp:2559:67)
+WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_var<config_t_layernorm_29>' to 'layernorm_compute_va' (src/modules.hpp:2445:67)
+WARNING: [XFORM 203-631] Renaming function 'QuantAct<config_t_act_29>' to 'QuantAct' (src/modules.hpp:19:61)
+WARNING: [XFORM 203-631] Renaming function 'LayernormBcast<config_t_layernorm_bcast_29>' to 'LayernormBcast' (src/modules.hpp:19:6)
+WARNING: [XFORM 203-631] Renaming function 'LayerNorm<config_t_layernorm_29>' to 'LayerNorm' (src/modules.hpp:2647:1)
+WARNING: [XFORM 203-631] Renaming function 'IdentityQuantAct<config_t_identity_act_29>146' to 'IdentityQuantAct146' (src/modules.hpp:19:69)
+WARNING: [XFORM 203-631] Renaming function 'IdentityGather<config_t_identity_gather_29>' to 'IdentityGather' (src/modules.hpp:19:152)
+WARNING: [XFORM 203-631] Renaming function 'IdentityAdd<config_t_identity_add_29>' to 'IdentityAdd' (src/modules.hpp:19:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 633.707 ; gain = 200.000 ; free physical = 11824 ; free virtual = 96753
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'kernel_29' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityGather' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 40.9 seconds; current allocated memory: 242.896 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 243.211 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityQuantAct146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.39 seconds; current allocated memory: 247.217 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.84 seconds; current allocated memory: 253.396 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IdentityAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.74 seconds; current allocated memory: 254.297 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 254.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_save_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 48.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.51 seconds; current allocated memory: 255.814 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.76 seconds; current allocated memory: 257.516 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_compute_va' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.61 seconds; current allocated memory: 258.250 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 259.320 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_sqrt_alg_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 259.603 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 259.906 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_compute_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.44 seconds; current allocated memory: 260.709 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.45 seconds; current allocated memory: 261.963 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'layernorm_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 262.251 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 262.706 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 262.963 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.14 seconds; current allocated memory: 264.567 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'QuantAct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.34 seconds; current allocated memory: 266.098 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 267.925 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LayernormBcast' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 268.357 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 268.777 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'kernel_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 269.164 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 5.56 seconds; current allocated memory: 272.927 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityGather' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityGather'.
+INFO: [HLS 200-111]  Elapsed time: 3.04 seconds; current allocated memory: 274.703 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityQuantAct146' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_31_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_5_1_1': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_42_8_1_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_mux_646_8_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityQuantAct146'.
+INFO: [HLS 200-111]  Elapsed time: 0.9 seconds; current allocated memory: 286.222 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IdentityAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IdentityAdd'.
+INFO: [HLS 200-111]  Elapsed time: 7.03 seconds; current allocated memory: 309.553 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_save_data' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_srem_41s_11ns_33_45_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_save_data'.
+INFO: [HLS 200-111]  Elapsed time: 0.69 seconds; current allocated memory: 314.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_compute_va' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_compute_va'.
+INFO: [HLS 200-111]  Elapsed time: 1.74 seconds; current allocated memory: 320.572 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_sqrt_alg_b' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'kernel_29_udiv_32s_32ns_32_36_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_sqrt_alg_b'.
+INFO: [HLS 200-111]  Elapsed time: 1.31 seconds; current allocated memory: 324.814 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_compute_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_compute_y'.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 327.502 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'layernorm_write' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'layernorm_write'.
+INFO: [HLS 200-111]  Elapsed time: 1.35 seconds; current allocated memory: 331.770 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayerNorm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayerNorm'.
+INFO: [HLS 200-111]  Elapsed time: 0.63 seconds; current allocated memory: 335.159 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'QuantAct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'QuantAct'.
+INFO: [HLS 200-111]  Elapsed time: 2.69 seconds; current allocated memory: 339.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LayernormBcast' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LayernormBcast'.
+INFO: [HLS 200-111]  Elapsed time: 2.61 seconds; current allocated memory: 347.342 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'kernel_29' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'kernel_29/out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'kernel_29' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'kernel_29'.
+INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 350.305 MB.
+INFO: [RTMG 210-279] Implementing memory 'IdentityQuantAct146_identity_m_48_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IdentityQuantAct146_identity_e_48_rom' using distributed ROMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'kernel_29_srem_41s_11ns_33_45_1_div'
+INFO: [RTMG 210-282] Generating pipelined core: 'kernel_29_udiv_32s_32ns_32_36_seq_1_div'
+INFO: [RTMG 210-279] Implementing memory 'layernorm_compute_y_bias_rom' using block ROMs.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe1_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mean_pipe1_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mean_pipe2_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_0_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_0_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_1_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_1_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_2_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_2_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_3_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_3_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_4_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_4_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_5_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_5_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_6_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_6_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_7_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_7_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_8_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_8_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_9_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_9_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_10_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_10_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_11_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_11_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_12_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_12_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_13_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_13_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_14_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_14_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_V_V_15_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_V_V_15_U(fifo_w32_d145_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe2_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_sqrt_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe3_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_compute_y_factor_s_0_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'n_pipe4_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_0_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_1_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_2_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_3_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_4_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_5_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_6_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_7_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_8_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_9_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_10_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_11_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_12_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_13_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_14_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'in_write_V_V_15_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_compute_va_U0_U(start_for_layernorm_compute_va_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_compute_y_U0_U(start_for_layernorm_compute_y_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_sqrt_alg_b_U0_U(start_for_layernorm_sqrt_alg_b_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_layernorm_write_U0_U(start_for_layernorm_write_U0)' using Shift Registers.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_10_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_11_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_12_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_13_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'QuantAct_m_14_rom' using auto ROMs.
+==============================================================
+File generated on Mon Feb 20 12:13:05 EST 2023
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="common.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/common.hpp"/>
+    <originFiles name="modules.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/modules.hpp"/>
+    <originFiles name="parameters.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/parameters.hpp"/>
+    <originFiles name="top.cpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/top.cpp"/>
+    <originFiles name="top.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/top.hpp"/>
+    <originFiles name="weights.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/weights.hpp"/>
+    <originFiles name="common.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/common.hpp"/>
+    <originFiles name="modules.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/modules.hpp"/>
+    <originFiles name="parameters.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/parameters.hpp"/>
+    <originFiles name="top.cpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/top.cpp"/>
+    <originFiles name="top.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/top.hpp"/>
+    <originFiles name="weights.hpp" path="/home/tim/libGalapagos_capstone/ibert_test_layernorm/kern/layer_0/kern_29/src/weights.hpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

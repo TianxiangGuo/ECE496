@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'IdentityAdd&lt;config_t_identity_add_29>' to 'IdentityAdd' (src/modules.hpp:19:52)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:20.754-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'IdentityGather&lt;config_t_identity_gather_29>' to 'IdentityGather' (src/modules.hpp:19:152)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.509-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'IdentityQuantAct&lt;config_t_identity_act_29>146' to 'IdentityQuantAct146' (src/modules.hpp:19:69)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.505-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'LayerNorm&lt;config_t_layernorm_29>' to 'LayerNorm' (src/modules.hpp:2647:1)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.500-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'LayernormBcast&lt;config_t_layernorm_bcast_29>' to 'LayernormBcast' (src/modules.hpp:19:6)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.496-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'QuantAct&lt;config_t_act_29>' to 'QuantAct' (src/modules.hpp:19:61)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.491-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_var&lt;config_t_layernorm_29>' to 'layernorm_compute_va' (src/modules.hpp:2445:67)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.487-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'layernorm_compute_y&lt;config_t_layernorm_29>' to 'layernorm_compute_y' (src/modules.hpp:2559:67)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.482-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'layernorm_save_data&lt;config_t_layernorm_29>' to 'layernorm_save_data' (src/modules.hpp:19:6)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.476-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'layernorm_sqrt_alg_based&lt;config_t_layernorm_29>' to 'layernorm_sqrt_alg_b' (src/modules.hpp:2497:2)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.471-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'layernorm_write&lt;config_t_layernorm_29>' to 'layernorm_write' (src/modules.hpp:2593:63)" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:16.463-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1' (src/modules.hpp:2697:18) in function 'LayernormBcast&lt;config_t_layernorm_bcast_29>' : &#xA;&#xA;&#xA;the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop." projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:14.896-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'identity_e'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2130:22), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:10.765-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'identity_m'  accessed through non-constant indices on dimension 2 (src/modules.hpp:2125:16), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:08.369-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'temp_data.V' (src/modules.hpp:2079) accessed through non-constant indices on dimension 1 (src/modules.hpp:2120:2), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:08.071-0500" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] src/modules.hpp:2616: variable-indexed range selection may cause suboptimal QoR." projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:06.169-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 10 issue(s) in file src/top.cpp" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:10:02.405-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/top.cpp:14:23" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.714-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/modules.hpp:2655:52" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.710-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:2032:28" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.705-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1583:24" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.701-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:1159:24" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.697-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:773:27" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.693-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:696:27" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.689-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:560:24" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.686-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-111] Streams will behave like static variables inside a dataflow region: src/modules.hpp:469:24" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.683-0500" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Since the only kind of statements allowed in a dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/modules.hpp:244:2" projectName="layernorm_kern29" solutionName="solution1" date="2023-02-20T12:09:51.679-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
